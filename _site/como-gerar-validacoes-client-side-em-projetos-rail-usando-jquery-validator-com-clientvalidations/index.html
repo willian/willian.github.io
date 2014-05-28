@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Como gerar validações client-side em projetos Rails usando jQuery Validator com ClientValidations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="http://willianfernandes.dev/como-gerar-validacoes-client-side-em-projetos-rail-usando-jquery-validator-com-clientvalidations" />
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <!-- link rel="stylesheet" href="/css/main.css" -->
+
+    <link rel="stylesheet" href="/assets/style-9f6205fcaf8f5bdcbdd24436a41930f3.css">
+
+    <script src="/assets/modernizr/modernizr-7d68900ffc3257f9e98710fc82e8eed0.js"></script>
+  </head>
+  <body>
+
+    <div class="page container">
+      <header>
+        <h1 class="logo">
+          <a href="/">
+            <img src="/assets/logo-d925c9e0a6f24cbf5cced4a776fb4aa0.svg" alt="Willian Fernandes" width="770" height="116">
+          </a>
+        </h1>
+
+        <p class="intro">
+          Sou <strong>Desenvolvedor Web</strong> com foco no <em>back-end</em>,
+          mas também sou apaixonado por estudar técnicas de <em>front-end</em>.
+          Este é meu blog pessoal e além de escrever sobre desenvolvimento web
+          em geral, utilizo este espaço para aprendizado, experimentando técnicas
+          que ainda não utilizei em projetos maiores.
+        </p>
+
+        <nav class="social-medias">
+          <ul>
+            <li><a class="about" href="/sobre">Sobre</a></li>
+            <li><a class="email" href="mailto:willian@willianfernandes.com.br">Email</a></li>
+            <li><a class="github" href="https://github.com/willian">GitHub</a></li>
+            <li><a class="gtalk" href="ichat:willian@willianfernandes.com.br">Gtalk</a></li>
+            <li><a class="linkedin" href="http://br.linkedin.com/in/willian">LinkedIn</a></li>
+            <li><a class="skype" href="skype:willianfernan">Skype</a></li>
+            <li><a class="twitter" href="http://twitter.com/willian">Twitter</a></li>
+            <li><a class="rss" href="/feed">Feed</a></li>
+            <li><a class="rss" href="/feed">Feed</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="content">
+        <h2>Como gerar validações client-side em projetos Rails usando jQuery Validator com ClientValidations</h2>
+<p class="meta">29 Jan 2010</p>
+
+<div class="post">
+  <p>Estou fazendo uma nova aplicação aqui na empresa e teremos muitos formulários. Para não precisar criar um script de validação para cada formulário, fui atrás de um plugin que gerasse as validação JavaScript automáticamente, com base nas validações do modelo.</p>
+
+<p>Sem maiores problemas, encontrei o plugin <a href="http://github.com/augustl/live-validations/">Live Validations</a>. Ele faz tudo o que preciso, quer dizer, quase tudo. :(</p>
+
+<p>Alguns dos formulários dessa aplicação são <a href="http://railscasts.com/episodes/196-nested-model-form-part-1">Nested Model Form</a> e o <em>Live Validations</em> não suporta esse tipo de formulário.</p>
+
+<p>Sendo assim, resolvi fazer meu próprio plugin, chamado <a href="http://github.com/willian/client_validations">Client Validations</a>. O que ele faz é basicamente ler as validações definidas no <em>Model</em> e traduzi-las para JavaScript usando <a href="http://willianfernandes.com.br/validacao-de-formularios-com-jquery/">jQuery Validator</a>.</p>
+
+<h3>Instalação</h3>
+
+<pre class="bash"><code>script/plugin install git://github.com/willian/client_validations.git</code></pre>
+
+<p>Como o <strong><em>Client Validations</em></strong> depende do plugin <strong><em>Validation Reflection</em></strong>, preciaremos instalar ele também:
+<pre class="bash"><code>script/plugin install git://github.com/redinger/validation_reflection.git</code></pre></p>
+
+<p>E por último basta instalar o jQuery e o jQuery Validator:</p>
+
+<ul>
+    <li><a href="http://code.jquery.com/jquery-latest.min.js">http://code.jquery.com/jquery-latest.min.js</a></li>
+    <li><a href="http://ajax.microsoft.com/ajax/jquery.validate/1.6/jquery.validate.min.js">http://ajax.microsoft.com/ajax/jquery.validate/1.6/jquery.validate.min.js</a></li>
+</ul>
+
+<p>Não esqueça de carregar o jquery e o validator no seu HTML:
+<pre class="rails"><code>&lt;%= <span class="kw5">javascript<em>include</em>tag</span> <span class="st0">&#39;jquery-latest.min.js&#39;</span>, <span class="st0">&#39;jquery.validate.min.js&#39;</span> %&gt;</code></pre></p>
+
+<p>Supondo que temos o modelo abaixo:
+<pre class="rails"><code><span class="kw1">class</span> Task &lt; <span class="re2">ActiveRecord::Base</span>
+  <span class="kw5">validates<em>presence</em>of</span> <span class="re3">:name</span>
+<span class="kw1">end</span>
+&nbsp;</code></pre></p>
+
+<p>E o formulário desse modelo:
+<pre class="rails"><code>&lt;% <span class="kw5">form<em>for</span><span class="br0">&#40;</span>@task<span class="br0">&#41;</span> <span class="kw1">do</span> |f| %&gt;
+  &lt;%= f.<span class="me1">error</em>messages</span> %&gt;
+&nbsp;
+  &lt;p&gt;
+    &lt;%= f.<span class="me1">label</span> <span class="re3">:name</span> %&gt;&lt;br /&gt;
+    &lt;%= f.<span class="kw5">text_field</span> <span class="re3">:name</span> %&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;%= f.<span class="me1">submit</span> <span class="st0">&#39;Create&#39;</span> %&gt;
+  &lt;/p&gt;
+&lt;% <span class="kw1">end</span> %&gt;</code></pre></p>
+
+<p>Tudo o que precisamos fazer para a validação client-side funcionar é adicionar o helper <strong><em>client<em>validations</em></strong> no formulário. Ficará assim:
+<pre class="rails"><code>&lt;% <span class="kw5">form</em>for</span><span class="br0">&#40;</span>@task<span class="br0">&#41;</span> <span class="kw1">do</span> |f| %&gt;
+  &lt;%= f.<span class="me1">error<em>messages</span> %&gt;
+&nbsp;
+  &lt;p&gt;
+    &lt;%= f.<span class="me1">label</span> <span class="re3">:name</span> %&gt;&lt;br /&gt;
+    &lt;%= f.<span class="kw5">text</em>field</span> <span class="re3">:name</span> %&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;%= f.<span class="me1">submit</span> <span class="st0">&#39;Create&#39;</span> %&gt;
+  &lt;/p&gt;
+  &lt;%= f.<span class="me1">client_validations</span> %&gt;
+&lt;% <span class="kw1">end</span> %&gt;</code></pre></p>
+
+<p>Provavelmente você receberá a seguinte mensagem de validação:
+<pre><code>translation missing: en, activerecord, attributes, task, name can&#39;t be blank</code></pre></p>
+
+<p>Para resolver esse problema, basta criar o arquivo de internacionalização em config/locales.</p>
+
+<p>O plugin ainda está na versão 0.1.0 e muita coisa pode ser feita para melhorá-lo. Se tiver alguma sugestão, crie um comentário ou use a página do GitHub: <a href="http://github.com/willian/client_validations">http://github.com/willian/client_validations</a></p>
+
+</div>
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'willianfernandes'; // required: replace example with your forum shortname
+    var disqus_url = "http://willianfernandes.dev/como-gerar-validacoes-client-side-em-projetos-rail-usando-jquery-validator-com-clientvalidations";
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+      </section>
+
+      <footer>
+        <p>
+          <small>
+            Textos escritos por mim — exceto quando informado — e com
+            <a href="http://creativecommons.org/licenses/by-nc/2.5/br" rel="external">algumas restrições</a>
+            de uso.
+          </small>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-2426526-1', 'willianfernandes.com.br');
+      ga('send', 'pageview');
+    </script>
+
+    <script src="/assets/app-c198bb608e7a9f61c24ceff7717da808.js"></script>
+  </body>
+</html>

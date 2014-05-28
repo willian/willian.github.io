@@ -1,0 +1,22 @@
+---
+layout: post
+title: Novo layout
+categories:
+- blog
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: '157'
+---
+Depois de quase um ano usando o layout padrão do Wordpress, resolvi criar um próprio e ver se assim me animo a escrever com mais frequencia por aqui.
+Aproveitei para me aventurar um pouco no HTML 5 e CSS3 e provavelmente algumas coisas ainda quebrem em algum browser até que eu consiga ajeitar tudo por aqui.
+
+Caso você esteja lendo esse post em um leitor de feeds, segue abaixo uma Screen shot de como ficou:
+<img src="http://willianfernandes.com.br/wp-content/uploads/2011/01/novo-layout.png" alt="Novo layout" title="Novo layout" width="800" height="593" class="aligncenter size-full wp-image-166" />
+
+Tem alguma sugestão? Mande no comentário.
+
+Até!

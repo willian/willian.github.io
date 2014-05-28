@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Subversion: você só sente falta quando perde!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="http://willianfernandes.dev/subversion-voce-so-sente-falta-quando-perde" />
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <!-- link rel="stylesheet" href="/css/main.css" -->
+
+    <link rel="stylesheet" href="/assets/style-9f6205fcaf8f5bdcbdd24436a41930f3.css">
+
+    <script src="/assets/modernizr/modernizr-7d68900ffc3257f9e98710fc82e8eed0.js"></script>
+  </head>
+  <body>
+
+    <div class="page container">
+      <header>
+        <h1 class="logo">
+          <a href="/">
+            <img src="/assets/logo-d925c9e0a6f24cbf5cced4a776fb4aa0.svg" alt="Willian Fernandes" width="770" height="116">
+          </a>
+        </h1>
+
+        <p class="intro">
+          Sou <strong>Desenvolvedor Web</strong> com foco no <em>back-end</em>,
+          mas também sou apaixonado por estudar técnicas de <em>front-end</em>.
+          Este é meu blog pessoal e além de escrever sobre desenvolvimento web
+          em geral, utilizo este espaço para aprendizado, experimentando técnicas
+          que ainda não utilizei em projetos maiores.
+        </p>
+
+        <nav class="social-medias">
+          <ul>
+            <li><a class="about" href="/sobre">Sobre</a></li>
+            <li><a class="email" href="mailto:willian@willianfernandes.com.br">Email</a></li>
+            <li><a class="github" href="https://github.com/willian">GitHub</a></li>
+            <li><a class="gtalk" href="ichat:willian@willianfernandes.com.br">Gtalk</a></li>
+            <li><a class="linkedin" href="http://br.linkedin.com/in/willian">LinkedIn</a></li>
+            <li><a class="skype" href="skype:willianfernan">Skype</a></li>
+            <li><a class="twitter" href="http://twitter.com/willian">Twitter</a></li>
+            <li><a class="rss" href="/feed">Feed</a></li>
+            <li><a class="rss" href="/feed">Feed</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="content">
+        <h2>Subversion: você só sente falta quando perde!</h2>
+<p class="meta">06 Sep 2007</p>
+
+<div class="post">
+  <p>Nos aqui da <a href="http://visie.com.br">Visie</a> estamos acostumados a criar um repositorio no <a href="http://subversion.tigris.org/">Subversion</a> para cada novo projeto que iremos trabalhar.</p>
+
+<p>É muito bom trabalhar com o Subversion, ainda mais quando podemos trabalhar longe do escritorio. Acontece que, nos ultimos tres meses estou alocado em um cliente, desenvolvendo um gigantesco projeto em PHP.</p>
+
+<p>Aqui (no cliente) nao podemos utilizar nenhum controle de versao, muito menos Linux nas estaçoes de trabalho. O servidor e um AS/400 e o banco de dados e DB2. Entao, deu para imaginar como acessamos os arquivos do servidor?</p>
+
+<p>Temos uma mapeamento no Windows para o diretorio do projeto no servidor AS/400. Ou seja, todos os programadores acessam o mesmo arquivo, ao mesmo tempo, no mesmo lugar. Ah! Este servidor e o mesmo para Desenvolvimento, Testes (Homologaçao) e Produçao.</p>
+
+<p>Para evitar que alguem edite os arquivos de produçao foi criada a seguinte estrutura de diretorios:</p>
+
+<ul>
+<li>PROJETO_D</li>
+<li>PROJETO_H</li>
+<li>PROJETO_P</li>
+</ul>
+
+<p>Assim ficou melhor, nao e? Olha so que coisa mais inteligente e organizada:</p>
+
+<ol>
+<li>Depois que eu terminar de desenvolver basta copiar os arquivos do diretorio PROJETO<em>D e colocar no diretorio PROJETO</em>H;</li>
+<li>Se alguma coisa estiver errada e so copiar o(s) arquivo(s) que sera(ao) corrigido(s) do PROJETO<em>H e colar no PROJETO</em>D;</li>
+<li>Assim que editar esses arquivos e so fazer o primeiro passo novamente;</li>
+<li>Se tudo for homologado e so copiar os arquivos do PROJETO<em>H para o PROJETO</em>P e pronto!</li>
+</ol>
+
+<p>Acontece que, estava eu alterando um arquivo quando de repente aparece a seguinte mensagem:
+<img src="http://willianfernandes.com.br/wp-content/uploads/2007/09/alguem_fucando1.PNG" alt="&quot;Alguém"></p>
+
+<p>Pois e, isso acontece porque todas as pessoas envolvidas no projeto estao com o diretorio mapeado em seus Windows e sempre que eu for alterar um arquivo tenho que verificar se alguem esta alterando o mesmo arquivo para evitar esses tipos de conflitos.</p>
+
+<p>Que falta eu sinto do Subversion! :(</p>
+
+<p>PS.: O backup dos arquivo do sistema e feito em um diretorio chamado backup que possui outros diretorios com os nomes mais ou menos assim: PROJETO<em>D</em>20070906. Esse &quot;backup&quot; esta no mesmo HD que o sistema, ou seja, se o HD um dia &quot;morrer&quot; o sistema e o backup morrerao tambem.</p>
+
+</div>
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'willianfernandes'; // required: replace example with your forum shortname
+    var disqus_url = "http://willianfernandes.dev/subversion-voce-so-sente-falta-quando-perde";
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+      </section>
+
+      <footer>
+        <p>
+          <small>
+            Textos escritos por mim — exceto quando informado — e com
+            <a href="http://creativecommons.org/licenses/by-nc/2.5/br" rel="external">algumas restrições</a>
+            de uso.
+          </small>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-2426526-1', 'willianfernandes.com.br');
+      ga('send', 'pageview');
+    </script>
+
+    <script src="/assets/app-c198bb608e7a9f61c24ceff7717da808.js"></script>
+  </body>
+</html>

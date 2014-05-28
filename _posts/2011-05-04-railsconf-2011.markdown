@@ -1,0 +1,25 @@
+---
+layout: post
+title: RailsConf 2011
+categories:
+- blog
+- rails
+- ruby
+- willian
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wp_old_slug: ''
+---
+Para quem não sabe dia 16 de maio acontecerá o <a href="http://en.oreilly.com/rails2011">RailsConf 2011</a>. O evento será novamente em Baltimore e vai até o dia 19.
+
+Eu nunca viajei para fora do país e minha primeira experiência será um tanto quanto interessante. Embarco dia 13 e chego dia 14, de madrugada, em Washington D.C, vou para Baltimore de carro no dia 15 e dia 20 volto para Washington onde fico até o dia 22. Dia 22 mesmo chego no Brasil.
+
+Enfim, quero saber quem mais do Brasil estará por lá para marcar um #horaextra em Baltimore, ou em Washington.
+
+Postarei no blog e no <a href="http://twitter.com/willian">twitter</a> a experiência de participar desse grande evento e de estar nos States.
+
+Até lá!

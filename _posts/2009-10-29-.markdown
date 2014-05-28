@@ -1,0 +1,12 @@
+---
+layout: post
+title: ''
+categories: []
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+---
+<a href='http://www.youtube.com/watch?v=DXb4Fac8iQ4' >Making a Podcast in Garage Band</a>

@@ -1,0 +1,16 @@
+name: Willian Fernandes
+description: Blog do Willian Fernandes sobre desenvolvimento web
+markdown: redcarpet
+pygments: true
+encoding: UTF-8
+timezone: America/Sao_Paulo
+permalink: /:title
+url: http://willianfernandes.dev
+assets:
+  js_compressor:  uglifier
+  css_compressor: sass
+  sources:
+    - _assets/images
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/bower

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Faye - Como eu criei um simples chat usando Rails</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="http://willianfernandes.dev/faye-como-eu-criei-um-simples-chat-usando-rails" />
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <!-- link rel="stylesheet" href="/css/main.css" -->
+
+    <link rel="stylesheet" href="/assets/style-9f6205fcaf8f5bdcbdd24436a41930f3.css">
+
+    <script src="/assets/modernizr/modernizr-7d68900ffc3257f9e98710fc82e8eed0.js"></script>
+  </head>
+  <body>
+
+    <div class="page container">
+      <header>
+        <h1 class="logo">
+          <a href="/">
+            <img src="/assets/logo-d925c9e0a6f24cbf5cced4a776fb4aa0.svg" alt="Willian Fernandes" width="770" height="116">
+          </a>
+        </h1>
+
+        <p class="intro">
+          Sou <strong>Desenvolvedor Web</strong> com foco no <em>back-end</em>,
+          mas também sou apaixonado por estudar técnicas de <em>front-end</em>.
+          Este é meu blog pessoal e além de escrever sobre desenvolvimento web
+          em geral, utilizo este espaço para aprendizado, experimentando técnicas
+          que ainda não utilizei em projetos maiores.
+        </p>
+
+        <nav class="social-medias">
+          <ul>
+            <li><a class="about" href="/sobre">Sobre</a></li>
+            <li><a class="email" href="mailto:willian@willianfernandes.com.br">Email</a></li>
+            <li><a class="github" href="https://github.com/willian">GitHub</a></li>
+            <li><a class="gtalk" href="ichat:willian@willianfernandes.com.br">Gtalk</a></li>
+            <li><a class="linkedin" href="http://br.linkedin.com/in/willian">LinkedIn</a></li>
+            <li><a class="skype" href="skype:willianfernan">Skype</a></li>
+            <li><a class="twitter" href="http://twitter.com/willian">Twitter</a></li>
+            <li><a class="rss" href="/feed">Feed</a></li>
+            <li><a class="rss" href="/feed">Feed</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="content">
+        <h2>Faye - Como eu criei um simples chat usando Rails</h2>
+<p class="meta">08 Nov 2011</p>
+
+<div class="post">
+  <p>Recentemente precisei criar um chat para integrar com a aplicação da empresa que trabalho. Sim, mais um desenvolvimento de chat. Como dizem por ai, chat é o novo Hello World.</p>
+
+<p>Já tinha ouvido falar do <a href="http://faye.jcoglan.com/">Faye</a>, até o Ryan Bates fez um <a href="http://railscasts.com/episodes/260-messaging-with-faye">Railscasts sobre o assunto</a>.</p>
+
+<p>O Faye tem módulos para Ruby e Node.js.</p>
+
+<p>Minha primeira tentativa foi utilizar a <a href="http://faye.jcoglan.com/ruby.html">versão ruby do Faye</a>. Essa versão nada mais é que uma aplicação Rack. Funcionou muito bem, até chegar em produção. O servidor que ele utiliza é o thin, e para a quantidade de requests que minha aplicação faz ao chat o servidor não durava 3 minutos em pé.</p>
+
+<p>Depois de muito quebrar a cabeça resolvi partir para a <a href="http://faye.jcoglan.com/node.html">versão em Node.js do Faye</a> que resolveu perfeitamente esse problema. Vou mostrar abaixo como fiz para utilizando Faye, Node.js e Rails:</p>
+
+<h2>Vamos ao código</h2>
+
+<p>Primeiro você precisa ter o <a href="http://nodejs.org">Node.js</a> e o <a href="http://npmjs.org">NPM</a> instalados.</p>
+
+<p>Na raiz da aplicação, instale o faye utilizando o npm:
+<pre class="bash"><code>$ npm install faye</code></pre></p>
+
+<p>Logo em seguida, também na raiz da aplicação, criei o arquivo abaixo:
+<strong>faye_server.js</strong>
+<pre class="javascript"><code><span class="kw2">var</span> http = require<span class="br0">&#40;</span><span class="st0">&#39;http&#39;</span><span class="br0">&#41;</span>
+  , faye = require<span class="br0">&#40;</span><span class="st0">&#39;faye&#39;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="kw2">var</span> Logger = <span class="br0">&#123;</span>
+    incoming: <span class="kw2">function</span><span class="br0">&#40;</span>message, callback<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        console.<span class="me1">log</span><span class="br0">&#40;</span>message<span class="br0">&#41;</span>;
+        console.<span class="me1">log</span><span class="br0">&#40;</span><span class="st0">&#39;====================&#39;</span><span class="br0">&#41;</span>;
+&nbsp;
+        callback<span class="br0">&#40;</span>message<span class="br0">&#41;</span>;
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw2">var</span> bayeux = <span class="kw2">new</span> faye.<span class="me1">NodeAdapter</span><span class="br0">&#40;</span><span class="br0">&#123;</span>mount: <span class="st0">&#39;/faye&#39;</span>, timeout: <span class="nu0">60</span><span class="br0">&#125;</span><span class="br0">&#41;</span>;
+bayeux.<span class="me1">addExtension</span><span class="br0">&#40;</span>Logger<span class="br0">&#41;</span>;
+bayeux.<span class="me1">listen</span><span class="br0">&#40;</span><span class="nu0">9292</span><span class="br0">&#41;</span>;
+&nbsp;</code></pre></p>
+
+<p>Para testar se o faye está corretamente instalado e funcionando, rode o servidor:
+<pre class="bash"><code>$ node faye_server.js</code></pre></p>
+
+<p>E abra no seu nevegador a URL <a href="http://localhost:9292/faye.js">http://localhost:9292/faye.js</a>. Se um arquivo JavaScript for carregar, então o Faye está funcionando corretamente. #WIN</p>
+
+<h2>Client-side</h2>
+
+<p>No seu arquivo de layouts (ex.: application.html.erb) você precisa adicionar o JavaScript do Faye:
+<pre class="html4strict"><code><span class="sc2">&lt;%= javascript<em>include</em>tag <span class="st0">&quot;http://localhost:9292/faye.js&quot;</span> %<span class="kw2">&gt;</span></span></code></pre></p>
+
+<p>Agora basta criar uma instância para o Client do Faye e o canal que receberá as mensagens do nosso chat:
+<strong>application.js</strong>
+<pre class="javascript"><code>$<span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw2">var</span> faye<em>client = <span class="kw2">new</span> Faye.<span class="me1">Client</span><span class="br0">&#40;</span><span class="st0">&#39;http://localhost:9292/faye&#39;</span><span class="br0">&#41;</span>;
+    faye</em>client.<span class="me1">subscribe</span><span class="br0">&#40;</span><span class="st0">&#39;/chat&#39;</span> , <span class="kw2">function</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">eval</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span>;
+    <span class="br0">&#125;</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+&nbsp;</code></pre></p>
+
+<h2>Back-end</h2>
+
+<p>Criei um simples formulário que faz um POST para MessagesController::create utilizando AJAX:
+<strong>app/views/messages/index.html.erb</strong>
+<pre class="rails"><code>&lt;h1&gt;Messages&lt;/h1&gt;
+&nbsp;
+&lt;div id=<span class="st0">&quot;messages&quot;</span>&gt;
+    &lt;ol&gt;&lt;/ol&gt;
+&lt;/div&gt;
+&nbsp;
+&lt;%= <span class="kw5">form<em>for</span> <span class="re1">@message</span>, remote: <span class="kw2">true</span> <span class="kw1">do</span> |f| %&gt;
+    &lt;%= f.<span class="me1">label</span> <span class="re3">:content</span> %&gt;
+    &lt;%= f.<span class="kw5">text</em>field</span> <span class="re3">:content</span> %&gt;
+    &lt;%= f.<span class="me1">submit</span> <span class="st0">&quot;Send&quot;</span> %&gt;
+&lt;% <span class="kw1">end</span> %&gt;
+&nbsp;</code></pre></p>
+
+<p>E no controller MessagesController:
+<pre class="rails"><code><span class="kw1">class</span> MessagesController &lt; ApplicationController
+  <span class="kw1">def</span> index
+    <span class="re1">@message</span> = Message.<span class="kw5">new</span>
+  <span class="kw1">end</span>
+&nbsp;
+  <span class="kw1">def</span> create
+    <span class="re1">@message</span> = Message.<span class="kw5">create</span><span class="br0">&#40;</span>params<span class="br0">&#91;</span><span class="re3">:message</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+  <span class="kw1">end</span>
+<span class="kw1">end</span>
+&nbsp;</code></pre></p>
+
+<p>Simples, certo?</p>
+
+<p>O segredo está na view <code>app/views/messages/create.js.erb</code>:
+<pre class="rails"><code>&lt;% broadcast <span class="st0">&quot;/chat&quot;</span> <span class="kw1">do</span> %&gt;
+    $<span class="br0">&#40;</span><span class="st0">&quot;#messages ol&quot;</span><span class="br0">&#41;</span>.<span class="me1">append</span><span class="br0">&#40;</span>$<span class="br0">&#40;</span><span class="st0">&quot;&lt;li&gt;&lt;%= @message.content %&gt;&lt;/li&gt;&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+&lt;% <span class="kw1">end</span> %&gt;
+$<span class="br0">&#40;</span><span class="st0">&quot;#message_content&quot;</span><span class="br0">&#41;</span>.<span class="me1">val</span><span class="br0">&#40;</span><span class="st0">&#39;&#39;</span><span class="br0">&#41;</span>;
+&nbsp;</code></pre></p>
+
+<p>Seguindo a dica do Ryan Bates, criei um helper para facilitar o envio das mensagens para o Faye Server. Ele será responsável em fazer o broadcast para todos os usuários conectados no chat.</p>
+
+<p><code>app/helpers/messages<em>helper.rb</code>
+<pre class="rails"><code><span class="kw1">module</span> MessagesHelper
+  <span class="kw1">def</span> broadcast<span class="br0">&#40;</span>channel, &amp;block<span class="br0">&#41;</span>
+    message = <span class="br0">&#123;</span> channel: channel, data: capture<span class="br0">&#40;</span>&amp;block<span class="br0">&#41;</span> <span class="br0">&#125;</span>
+    uri     = <span class="kw4">URI</span>.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">&quot;http://localhost:9292/faye&quot;</span><span class="br0">&#41;</span>
+    <span class="re2">Net::HTTP</span>.<span class="me1">post</em>form</span><span class="br0">&#40;</span>uri, message: message.<span class="me1">to_json</span><span class="br0">&#41;</span>
+  <span class="kw1">end</span>
+<span class="kw1">end</span>
+&nbsp;</code></pre></p>
+
+<p>Como este helper está usando o <code>Net::HTTP</code>, precisamos adicioná-lo na nossa aplicação. Eu normalmente faço o <code>require</code> dessa lib no arquivo <code>config/application.rb</code>:
+<pre class="rails"><code><span class="co1"># ...</span>
+&nbsp;
+<span class="kw3">require</span> <span class="st0">&#39;rails/all&#39;</span>
+<span class="kw3">require</span> <span class="st0">&#39;net/http&#39;</span>
+&nbsp;
+<span class="co1"># ...</span></code></pre></p>
+
+<p>Com isso nosso chat está pronto!</p>
+
+<p>Lógico que na minha aplicação existem processos um pouco mais complexos, lidando com chat privado (estilo Facebook) e autenticação de usuários. Mas para exemplo, esse caso mais simples vale.</p>
+
+<p>Você pode baixar a aplicação completa diretamente do meu GitHub:
+<a href="https://github.com/willian/faye_chat_example">https://github.com/willian/faye<em>chat</em>example</a></p>
+
+<p>Fácil, não!? :)</p>
+
+</div>
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'willianfernandes'; // required: replace example with your forum shortname
+    var disqus_url = "http://willianfernandes.dev/faye-como-eu-criei-um-simples-chat-usando-rails";
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+      </section>
+
+      <footer>
+        <p>
+          <small>
+            Textos escritos por mim — exceto quando informado — e com
+            <a href="http://creativecommons.org/licenses/by-nc/2.5/br" rel="external">algumas restrições</a>
+            de uso.
+          </small>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-2426526-1', 'willianfernandes.com.br');
+      ga('send', 'pageview');
+    </script>
+
+    <script src="/assets/app-c198bb608e7a9f61c24ceff7717da808.js"></script>
+  </body>
+</html>

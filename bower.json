@@ -1,0 +1,21 @@
+{
+  "name": "WillianFernandes.com.br",
+  "version": "0.0.0",
+  "authors": [
+    "Willian Fernandes <willian@willianfernandes.com.br>"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.willianfernandes.com.br",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "_assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.2.1"
+  }
+}

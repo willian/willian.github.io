@@ -1,0 +1,28 @@
+header {
+  @extend .medium-4;
+  @extend .large-4;
+  @extend .columns;
+
+  float: right;
+
+  .logo {
+    text-align: center;
+  }
+
+  .intro {
+    text-align: justify;
+  }
+
+  .social-medias {
+    ul {
+      @extend .no-bullet;
+
+      li {
+        @extend .small-6;
+        @extend .medium-4;
+        @extend .large-4;
+        @extend .columns;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+body {
+  background: url(asset_path("background.png"));
+  font-family: $body-font-family;
+
+  .page.container {
+    @include grid-row();
+  }
+}

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>O Fantástico Mundo do Python - Parte 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="http://willianfernandes.dev/o-fantastico-mundo-do-python-parte-1" />
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <!-- link rel="stylesheet" href="/css/main.css" -->
+
+    <link rel="stylesheet" href="/assets/style-9f6205fcaf8f5bdcbdd24436a41930f3.css">
+
+    <script src="/assets/modernizr/modernizr-7d68900ffc3257f9e98710fc82e8eed0.js"></script>
+  </head>
+  <body>
+
+    <div class="page container">
+      <header>
+        <h1 class="logo">
+          <a href="/">
+            <img src="/assets/logo-d925c9e0a6f24cbf5cced4a776fb4aa0.svg" alt="Willian Fernandes" width="770" height="116">
+          </a>
+        </h1>
+
+        <p class="intro">
+          Sou <strong>Desenvolvedor Web</strong> com foco no <em>back-end</em>,
+          mas também sou apaixonado por estudar técnicas de <em>front-end</em>.
+          Este é meu blog pessoal e além de escrever sobre desenvolvimento web
+          em geral, utilizo este espaço para aprendizado, experimentando técnicas
+          que ainda não utilizei em projetos maiores.
+        </p>
+
+        <nav class="social-medias">
+          <ul>
+            <li><a class="about" href="/sobre">Sobre</a></li>
+            <li><a class="email" href="mailto:willian@willianfernandes.com.br">Email</a></li>
+            <li><a class="github" href="https://github.com/willian">GitHub</a></li>
+            <li><a class="gtalk" href="ichat:willian@willianfernandes.com.br">Gtalk</a></li>
+            <li><a class="linkedin" href="http://br.linkedin.com/in/willian">LinkedIn</a></li>
+            <li><a class="skype" href="skype:willianfernan">Skype</a></li>
+            <li><a class="twitter" href="http://twitter.com/willian">Twitter</a></li>
+            <li><a class="rss" href="/feed">Feed</a></li>
+            <li><a class="rss" href="/feed">Feed</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="content">
+        <h2>O Fantástico Mundo do Python - Parte 1</h2>
+<p class="meta">10 Sep 2007</p>
+
+<div class="post">
+  <p>Gosto muito de programar, principalmente para Web. Sempre gostei muito de <a href="http://br.php.net">PHP</a> e outras linguagens/tecnlogias do mundo Open Source, apesar de tambem ter trabalhado bastante com ASP/ASP.NET (C#) meu principal foco foi o mundo Open Source.</p>
+
+<p>Ha um pouco menos de um ano comecei a estudar <a href="http://python.org">Python</a> e cada dia que passa meu interesse por essa linguagem aumenta mais e mais.</p>
+
+<p>Assim que lancei o blog recebi alguns comentarios e e-mails de pessoas pedindo conteudo de Python, pois sempre ouvem falar desta linguagem e gostariam de saber como ela e. Por isso resolvi listar algumas diferenças entre Python e PHP (umas das linguagens mais usadas no Brasil).</p>
+
+<p>Abaixo segue uma lista com algumas diferenças entre a sintaxe e a estrutura de dados do PHP e do Python:</p>
+
+<h3>1. Criando listas (arrays)</h3>
+
+<h4>PHP</h4>
+
+<div class="highlight"><pre><code class="php"><span class="x">$numeros = array(1,2,3,4,5);</span>
+<span class="x">echo &quot;O numero &quot; . $numeros[1] . &quot; e segundo numero da lista&quot;;</span>
+</code></pre></div>
+
+<h4>Python</h4>
+
+<div class="highlight"><pre><code class="python"><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">print</span> <span class="s">&quot;O numero </span><span class="si">%i</span><span class="s"> e segundo numero da lista&quot;</span> <span class="o">%</span> <span class="n">numeros</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+
+<h3>2. Criando dicionarios (arrays associativos)</h3>
+
+<h4>PHP</h4>
+
+<div class="highlight"><pre><code class="php"><span class="x">$numeros = array(</span>
+<span class="x">    &quot;um&quot; =&gt; 1,</span>
+<span class="x">    &quot;dois&quot; =&gt; 2,</span>
+<span class="x">    &quot;tres&quot; =&gt; 3,</span>
+<span class="x">    &quot;quatro&quot; =&gt; 4,</span>
+<span class="x">    &quot;cinco&quot; =&gt; 5</span>
+<span class="x">);</span>
+<span class="x">echo &quot;O numero &quot; . $numeros[&quot;dois&quot;] . &quot; e segundo numero da lista&quot;;</span>
+</code></pre></div>
+
+<h4>Python</h4>
+
+<div class="highlight"><pre><code class="python"><span class="n">numeros</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;um&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;dois&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+    <span class="s">&quot;tres&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+    <span class="s">&quot;quatro&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span>
+    <span class="s">&quot;cinco&quot;</span><span class="p">:</span><span class="mi">5</span>
+<span class="p">}</span>
+<span class="k">print</span> <span class="s">&quot;O numero </span><span class="si">%i</span><span class="s"> e segundo numero da lista&quot;</span> <span class="o">%</span> <span class="n">numeros</span><span class="p">[</span><span class="s">&quot;dois&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<h3>3. Percorrendo a lista (array)</h3>
+
+<h4>PHP</h4>
+
+<div class="highlight"><pre><code class="php"><span class="x">$numeros = array(1,2,3,4,5);</span>
+<span class="x">for ($i = 0; $i &lt; count($numeros); $i++) {</span>
+<span class="x">    echo $numeros[$i];</span>
+<span class="x">}</span>
+</code></pre></div>
+
+<h4>Python</h4>
+
+<div class="highlight"><pre><code class="python"><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">i</span>
+</code></pre></div>
+
+<h3>4. Verificando se uma chave existe em um dicionario (array associativo)</h3>
+
+<h4>PHP</h4>
+
+<div class="highlight"><pre><code class="php"><span class="x">$numeros = array(</span>
+<span class="x">    &quot;um&quot; =&gt; 1,</span>
+<span class="x">    &quot;dois&quot; =&gt; 2,</span>
+<span class="x">    &quot;tres&quot; =&gt; 3,</span>
+<span class="x">    &quot;quatro&quot; =&gt; 4,</span>
+<span class="x">    &quot;cinco&quot; =&gt; 5</span>
+<span class="x">);</span>
+<span class="x">if (array(&quot;um&quot;, $numeros)) {</span>
+<span class="x">    echo &quot;A chave existe&quot;;</span>
+<span class="x">}</span>
+</code></pre></div>
+
+<h4>Python</h4>
+
+<div class="highlight"><pre><code class="python"><span class="n">numeros</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;um&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+    <span class="s">&quot;dois&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+    <span class="s">&quot;tres&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+    <span class="s">&quot;quatro&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span>
+    <span class="s">&quot;cinco&quot;</span><span class="p">:</span><span class="mi">5</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="n">numeros</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&quot;um&quot;</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&quot;A chave existe&quot;</span>
+</code></pre></div>
+
+<h3>5. Replaces em String</h3>
+
+<h4>PHP</h4>
+
+<div class="highlight"><pre><code class="php"><span class="x">$titulo = &quot;{NOME} e o Pe de Feijao&quot;;</span>
+<span class="x">$titulo = str_replace(&quot;{NOME}&quot;, &quot;Joao&quot;, $titulo);</span>
+<span class="x">//Ou, para simplicar em uma unica linha</span>
+<span class="x">$titulo = str_replace(&quot;{NOME}&quot;, &quot;Joao&quot;, &quot;{NOME} e o Pe de Feijao&quot;);</span>
+</code></pre></div>
+
+<h4>Python</h4>
+
+<div class="highlight"><pre><code class="python"><span class="n">titulo</span> <span class="o">=</span> <span class="s">&quot;{NOME} e o Pe de Feijao&quot;</span>
+<span class="n">titulo</span> <span class="o">=</span> <span class="n">titulo</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;{NOME}&quot;</span><span class="p">,</span> <span class="s">&quot;Joao&quot;</span><span class="p">)</span>
+<span class="c">#Ou, para simplicar em uma unica linha</span>
+<span class="n">titulo</span> <span class="o">=</span> <span class="s">&quot;{NOME} e o Pe de Feijao&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;{NOME}&quot;</span><span class="p">,</span> <span class="s">&quot;Joao&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3>6. Escrevendo uma parte da String</h3>
+
+<h4>PHP</h4>
+
+<div class="highlight"><pre><code class="php"><span class="x">$titulo = &quot;Joao e o Pe de Feijao&quot;;</span>
+<span class="x">echo substr($titulo, 9, 2);</span>
+</code></pre></div>
+
+<h4>Python</h4>
+
+<div class="highlight"><pre><code class="python"><span class="n">titulo</span> <span class="o">=</span> <span class="s">&quot;Joao e o Pe de Feijao&quot;</span>
+<span class="k">print</span> <span class="n">titulo</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>
+</code></pre></div>
+
+<h3>7. Verificando tipo da variavel</h3>
+
+<h4>PHP</h4>
+
+<div class="highlight"><pre><code class="php"><span class="x">$var = &quot;Teste&quot;;</span>
+<span class="x">if (is_array($var)) {</span>
+<span class="x">    echo &quot;É array&quot;;</span>
+<span class="x">}</span>
+<span class="x">elseif (is_string($var)) {</span>
+<span class="x">    echo &quot;É string&quot;;</span>
+<span class="x">}</span>
+<span class="x">elseif (is_integer($var)) {</span>
+<span class="x">    echo &quot;É inteiro&quot;;</span>
+<span class="x">}</span>
+</code></pre></div>
+
+<h4>Python</h4>
+
+<div class="highlight"><pre><code class="python"><span class="n">var</span> <span class="o">=</span> <span class="s">&quot;Teste&quot;</span>
+<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;É array&quot;</span>
+<span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;É string&quot;</span>
+<span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;É inteiro&quot;</span>
+</code></pre></div>
+
+<h3>8. Estrutura de controle</h3>
+
+<h4>PHP</h4>
+
+<div class="highlight"><pre><code class="php"><span class="x">$n = 4;</span>
+<span class="x">if ($n == 1) {</span>
+<span class="x">    echo &quot;Um&quot;;</span>
+<span class="x">}</span>
+<span class="x">elseif ($n == 2) {</span>
+<span class="x">    echo &quot;Dois&quot;;</span>
+<span class="x">}</span>
+<span class="x">else {</span>
+<span class="x">    echo &quot;Maior que dois&quot;;</span>
+<span class="x">}</span>
+</code></pre></div>
+
+<h4>Python</h4>
+
+<div class="highlight"><pre><code class="python"><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;Um&quot;</span>
+<span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;Dois&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;Maior que dois&quot;</span>
+</code></pre></div>
+
+<h3>9. Definindo funçoes</h3>
+
+<h4>PHP</h4>
+
+<div class="highlight"><pre><code class="php"><span class="x">function Teste() {</span>
+<span class="x">    echo &quot;teste&quot;;</span>
+<span class="x">}</span>
+<span class="x">Teste();</span>
+</code></pre></div>
+
+<h4>Python</h4>
+
+<div class="highlight"><pre><code class="python"><span class="k">def</span> <span class="nf">Teste</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">&quot;teste&quot;</span>
+<span class="n">Teste</span><span class="p">()</span>
+</code></pre></div>
+
+<h3>10. Definindo classes</h3>
+
+<h4>PHP</h4>
+
+<div class="highlight"><pre><code class="php"><span class="x">class TestePai {</span>
+<span class="x">}</span>
+<span class="x">class Teste extends TestePai {</span>
+<span class="x">    public function __construct() {</span>
+<span class="x">        echo &quot;Esta e a classe Teste que faz herança da classe TestePai.&quot;;</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+<span class="x">$t = new Teste();</span>
+</code></pre></div>
+
+<h4>Python</h4>
+
+<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">TestePai</span><span class="p">:</span>
+    <span class="k">pass</span>
+<span class="k">class</span> <span class="nc">Teste</span><span class="p">(</span><span class="n">TestePai</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">print</span> <span class="s">&quot;Esta e a classe Teste que faz herança da classe TestePai.&quot;</span><span class="p">;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Teste</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Perceba que, em todos os casos, acabamos escrevendo menos codigo em Python do que em PHP. Isso por que em Python temos uma estrutura de dados mais simples e sua forma de trabalhar sempre com objetos facilita muito a vida do programador. Ao inves de ficarmos decorando milhares de funçoes em PHP, decoramos somente alguns metodos em Python.</p>
+
+<p>Particularmente, acho mais facil decorar metodos do que funçoes, isso porque os metodos se diferenciam entre os tipos de objetos disponiveis na linguagem. Alem disso, se eu estiver com duvida se algum metodo existe ou nao em determinado objeto, basta utilizar a funçao dir:</p>
+
+<div class="highlight"><pre><code class="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">minha_lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="n">minha_lista</span><span class="p">)</span>
+<span class="p">[</span><span class="s">&#39;__add__&#39;</span><span class="p">,</span> <span class="s">&#39;__class__&#39;</span><span class="p">,</span> <span class="s">&#39;__contains__&#39;</span><span class="p">,</span> <span class="s">&#39;__delattr__&#39;</span><span class="p">,</span> <span class="s">&#39;__delitem__&#39;</span><span class="p">,</span> <span class="s">&#39;__delslice__&#39;</span><span class="p">,</span> <span class="s">&#39;__doc__&#39;</span><span class="p">,</span>
+<span class="s">&#39;__eq__&#39;</span><span class="p">,</span> <span class="s">&#39;__ge__&#39;</span><span class="p">,</span> <span class="s">&#39;__getattribute__&#39;</span><span class="p">,</span> <span class="s">&#39;__getitem__&#39;</span><span class="p">,</span> <span class="s">&#39;__getslice__&#39;</span><span class="p">,</span> <span class="s">&#39;__gt__&#39;</span><span class="p">,</span> <span class="s">&#39;__hash__&#39;</span><span class="p">,</span>
+<span class="s">&#39;__iadd__&#39;</span><span class="p">,</span> <span class="s">&#39;__imul__&#39;</span><span class="p">,</span> <span class="s">&#39;__init__&#39;</span><span class="p">,</span> <span class="s">&#39;__iter__&#39;</span><span class="p">,</span> <span class="s">&#39;__le__&#39;</span><span class="p">,</span> <span class="s">&#39;__len__&#39;</span><span class="p">,</span> <span class="s">&#39;__lt__&#39;</span><span class="p">,</span> <span class="s">&#39;__mul__&#39;</span><span class="p">,</span>
+<span class="s">&#39;__ne__&#39;</span><span class="p">,</span> <span class="s">&#39;__new__&#39;</span><span class="p">,</span> <span class="s">&#39;__reduce__&#39;</span><span class="p">,</span> <span class="s">&#39;__reduce_ex__&#39;</span><span class="p">,</span> <span class="s">&#39;__repr__&#39;</span><span class="p">,</span> <span class="s">&#39;__reversed__&#39;</span><span class="p">,</span> <span class="s">&#39;__rmul__&#39;</span><span class="p">,</span>
+<span class="s">&#39;__setattr__&#39;</span><span class="p">,</span> <span class="s">&#39;__setitem__&#39;</span><span class="p">,</span> <span class="s">&#39;__setslice__&#39;</span><span class="p">,</span> <span class="s">&#39;__str__&#39;</span><span class="p">,</span> <span class="s">&#39;append&#39;</span><span class="p">,</span> <span class="s">&#39;count&#39;</span><span class="p">,</span> <span class="s">&#39;extend&#39;</span><span class="p">,</span> <span class="s">&#39;index&#39;</span><span class="p">,</span>
+<span class="s">&#39;insert&#39;</span><span class="p">,</span> <span class="s">&#39;pop&#39;</span><span class="p">,</span> <span class="s">&#39;remove&#39;</span><span class="p">,</span> <span class="s">&#39;reverse&#39;</span><span class="p">,</span> <span class="s">&#39;sort&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Ao digitar a funçao dir() passando como parametro o objeto minha_lista, podemos ver todos os metodo que um objeto do tipo list possui.</p>
+
+<p>Em posts futuros colocarei exemplos mais complexos, e quem sabe envolvendo outras linguagens tambem...</p>
+
+<p>Voce pode sugerir um exemplo, basta escrever nos comentarios...</p>
+
+</div>
+
+<div class="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'willianfernandes'; // required: replace example with your forum shortname
+    var disqus_url = "http://willianfernandes.dev/o-fantastico-mundo-do-python-parte-1";
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+      </section>
+
+      <footer>
+        <p>
+          <small>
+            Textos escritos por mim — exceto quando informado — e com
+            <a href="http://creativecommons.org/licenses/by-nc/2.5/br" rel="external">algumas restrições</a>
+            de uso.
+          </small>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-2426526-1', 'willianfernandes.com.br');
+      ga('send', 'pageview');
+    </script>
+
+    <script src="/assets/app-c198bb608e7a9f61c24ceff7717da808.js"></script>
+  </body>
+</html>

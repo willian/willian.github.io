@@ -1,0 +1,16 @@
+.content {
+  @extend .medium-8;
+  @extend .large-8;
+  @extend .columns;
+
+  float: right;
+
+  .posts {
+    h2 {
+      font-size: $h3-font-size;
+    }
+    ul {
+      @extend .no-bullet;
+    }
+  }
+}

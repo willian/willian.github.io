@@ -1,0 +1,28 @@
+---
+layout: post
+title: Morte ao IE6
+categories:
+- blog
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+Recebi o <a href="http://dgmike.com.br/2009/02/ie6-time-to-die/">convite do DGmike</a> e resolvi participar desta campanha.
+
+O objetivo da campanha é tirar o Internet Explorer 6 do mercado de navegadores.
+
+Acabei de inserir o <a href="http://imasters.uol.com.br/crossbrowser/pt-br/">script do iMaster</a> neste blog e convido os desenvolvedores abaixo para participarem também:
+
+<ul>
+	<li><a href="http://www.screencaster.com.br/">Guilherme Rambo</a></li>
+	<li><a href="http://www.tableless.com.br/">Diego Eis</a></li>
+	<li><a href="http://tecnocracia.com.br/">Manoel Netto</a></li>
+	<li><a href="http://blog.tinogomes.com/">Tino Gomes</a></li>
+	<li><a href="http://lsdr.net/blog/">Luiz Rocha</a></li>
+</ul>
+
+
+ 

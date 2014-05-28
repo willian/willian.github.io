@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Willian Fernandes</title>
+		<description>Blog do Willian Fernandes sobre desenvolvimento web</description>
+		<language>pt-BR</language>
+		<link>http://willianfernandes.dev</link>
+		<atom:link href="http://willianfernandes.dev/feed.xml" rel="self" type="application/rss+xml" />
+		
+		<pubDate>Fri, 07 Mar 2014 14:38:01 -0300</pubDate>
+		<lastBuildDate>Fri, 07 Mar 2014 14:38:01 -0300</lastBuildDate>
+		
+			<item>
+				<title>Welcome to Jekyll!</title>
+				<description><![CDATA[<p>You&#39;ll find this post in your <code>_posts</code> directory - edit this post and re-build (or run with the <code>-w</code> switch) to see your changes!
+To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
+<span class="c1">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span>
+</code></pre></div>
+
+<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/mojombo/jekyll">Jekyll&#39;s GitHub repo</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>You&#39;ll find this post in your <code>_posts</code> directory - edit this post and re-build (or run with the <code>-w</code> switch) to see your changes!
+To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">)</span>
+<span class="c1">#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</span>
+</code></pre></div>
+
+<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/mojombo/jekyll">Jekyll&#39;s GitHub repo</a>.</p>
+]]></content:encoded>
+				<link>http://willianfernandes.dev/welcome-to-jekyll</link>
+				<guid isPermaLink="true">http://willianfernandes.dev/welcome-to-jekyll</guid>
+				<pubDate>Fri, 07 Mar 2014 14:38:01 -0300</pubDate>
+			</item>
+		
+			<item>
+				<title>Como usar jQuery para remover um item de um Array JS</title>
+				<description><![CDATA[<p>Quem trabalha com JavaScript sabe que para remover um item de um array basta utilizar o metodo <em>splice</em>. Como o codigo abaixo:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maça&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pera&#39;</span><span class="p">,</span> <span class="s1">&#39;uva&#39;</span><span class="p">];</span>
+<span class="nx">frutas</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+
+<p>O codigo acima retira a <em>banana</em> do <em>array frutas</em>. Isso porque no 1º parametro do metodo <em>splice</em> informamos qual a posiçao do item no array que queremos remover. O 2º parametro indica quantos itens, contando do item que informamos, queremos remover. Sendo assim, se quisermos remover a <em>banana</em> e a <em>pera</em> basta fazer assim:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maça&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pera&#39;</span><span class="p">,</span> <span class="s1">&#39;uva&#39;</span><span class="p">];</span>
+<span class="nx">frutas</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Mas em muitos casos nao sabemos qual a posiçao do item que queremos remover e sim qual o valor do item. Uma abordagem e procurar qual a posiçao do item percorrendo o Array e comparando os valores com o valor que temos. Um tanto quanto chato, concorda?</p>
+
+<h2>jQuery para todas as horas!</h2>
+
+<p>Como e mais que comum termos jQuery em projetos web, realizar o trabalho acima fica facil. Pra isso precisaremos da funçao <em>$.grep</em>. Esta funçao encontra todos os elementos de um array de acordo com uma expressao. Vamos aplicar nosso exemplo removendo a fruta <em>banana</em> do nosso <em>array</em>, mas agora nao sabemos qual a posiçao que essa fruta se encontra no <em>array</em>. Nosso codigo ficara assim:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maça&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pera&#39;</span><span class="p">,</span> <span class="s1">&#39;uva&#39;</span><span class="p">];</span>
+<span class="nx">frutas</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">grep</span><span class="p">(</span><span class="nx">frutas</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">val</span> <span class="o">!=</span> <span class="s1">&#39;banana&#39;</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>Com a funcao <em>$.grep</em> podemos ir muito alem. Por exemplo, ter um array com somente os elementos que forem pares:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+<span class="nx">pares</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">grep</span><span class="p">(</span><span class="nx">numeros</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">// Valor do array pares: [2, 4, 6, 8]</span>
+</code></pre></div>
+
+<p>A funçao $.grep recebe 2 parametros obrigatorios: o array original e uma funçao <em>callback</em>. Esse <em>callback</em> recebe, por sua vez, 2 parametros: o valor do item atual e o indice (posiçao) desse valor no array.
+Existe um terceiro parametro (nao obrigatorio) da funçao <em>$.grep</em> chamado <em>inverse</em>, que por padrao tem o valor <em>false</em>. Esse parametro inverte a condiçao dentro do <em>callback</em>, fazendo exatamente o contrario que mandamos ela fazer. Se adicionarmos o parametro <em>inverse</em> no exemplo acima, teremos:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+<span class="nx">pares</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">grep</span><span class="p">(</span><span class="nx">numeros</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">},</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// Perceba que adicionamos um novo parametro</span>
+
+<span class="c1">// Valor do array pares: [1, 3, 5, 7]</span>
+<span class="c1">// pares agora so contem os valores impares</span>
+</code></pre></div>
+
+<p>Perceba que a funçao <em>$.grep</em> <strong>nao altera o array original</strong>. Nos exemplos acima o array <em>numeros</em> continuara tendo todos os elementos.</p>
+
+<p>Bom, e isso. Espero que agora remover itens de um array JavaScript utilizando o valor seja mais facil no seu dia-a-dia.</p>
+
+<p><strong>[ATUALIZADO]</strong></p>
+
+<p>Algumas pessoas se manifestaram no Twitter dizendo que isso e errado. Realmente, existe uma forma bem simples de remover um item de um Array em JavaScript sem saber a posiçao desse item e sem usar jQuery. Segue abaixo:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maça&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pera&#39;</span><span class="p">,</span> <span class="s1">&#39;uva&#39;</span><span class="p">];</span>
+<span class="nx">index</span> <span class="o">=</span> <span class="nx">frutas</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">);</span>
+<span class="nx">frutas</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Utilizamos o <em>indexOf</em> para descobrir qual a posiçao do valor que queremos remover e depois conseguiremos utilizar o <em>splice</em> normalmente.</p>
+
+<p>Agora, sobre a parte de retornar somente os numeros pares, o <a href="http://twitter.com/fnando">Nando Vieira</a> deu uma dica boa:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">item</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p><strong>OBS.:</strong> Navegadores antigos nao suportam a funçao <em>filter()</em>. Use por sua conta e risco.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Quem trabalha com JavaScript sabe que para remover um item de um array basta utilizar o metodo <em>splice</em>. Como o codigo abaixo:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maça&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pera&#39;</span><span class="p">,</span> <span class="s1">&#39;uva&#39;</span><span class="p">];</span>
+<span class="nx">frutas</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+
+<p>O codigo acima retira a <em>banana</em> do <em>array frutas</em>. Isso porque no 1º parametro do metodo <em>splice</em> informamos qual a posiçao do item no array que queremos remover. O 2º parametro indica quantos itens, contando do item que informamos, queremos remover. Sendo assim, se quisermos remover a <em>banana</em> e a <em>pera</em> basta fazer assim:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maça&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pera&#39;</span><span class="p">,</span> <span class="s1">&#39;uva&#39;</span><span class="p">];</span>
+<span class="nx">frutas</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Mas em muitos casos nao sabemos qual a posiçao do item que queremos remover e sim qual o valor do item. Uma abordagem e procurar qual a posiçao do item percorrendo o Array e comparando os valores com o valor que temos. Um tanto quanto chato, concorda?</p>
+
+<h2>jQuery para todas as horas!</h2>
+
+<p>Como e mais que comum termos jQuery em projetos web, realizar o trabalho acima fica facil. Pra isso precisaremos da funçao <em>$.grep</em>. Esta funçao encontra todos os elementos de um array de acordo com uma expressao. Vamos aplicar nosso exemplo removendo a fruta <em>banana</em> do nosso <em>array</em>, mas agora nao sabemos qual a posiçao que essa fruta se encontra no <em>array</em>. Nosso codigo ficara assim:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maça&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pera&#39;</span><span class="p">,</span> <span class="s1">&#39;uva&#39;</span><span class="p">];</span>
+<span class="nx">frutas</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">grep</span><span class="p">(</span><span class="nx">frutas</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">val</span> <span class="o">!=</span> <span class="s1">&#39;banana&#39;</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p>Com a funcao <em>$.grep</em> podemos ir muito alem. Por exemplo, ter um array com somente os elementos que forem pares:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+<span class="nx">pares</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">grep</span><span class="p">(</span><span class="nx">numeros</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">});</span>
+
+<span class="c1">// Valor do array pares: [2, 4, 6, 8]</span>
+</code></pre></div>
+
+<p>A funçao $.grep recebe 2 parametros obrigatorios: o array original e uma funçao <em>callback</em>. Esse <em>callback</em> recebe, por sua vez, 2 parametros: o valor do item atual e o indice (posiçao) desse valor no array.
+Existe um terceiro parametro (nao obrigatorio) da funçao <em>$.grep</em> chamado <em>inverse</em>, que por padrao tem o valor <em>false</em>. Esse parametro inverte a condiçao dentro do <em>callback</em>, fazendo exatamente o contrario que mandamos ela fazer. Se adicionarmos o parametro <em>inverse</em> no exemplo acima, teremos:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
+<span class="nx">pares</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">grep</span><span class="p">(</span><span class="nx">numeros</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">},</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// Perceba que adicionamos um novo parametro</span>
+
+<span class="c1">// Valor do array pares: [1, 3, 5, 7]</span>
+<span class="c1">// pares agora so contem os valores impares</span>
+</code></pre></div>
+
+<p>Perceba que a funçao <em>$.grep</em> <strong>nao altera o array original</strong>. Nos exemplos acima o array <em>numeros</em> continuara tendo todos os elementos.</p>
+
+<p>Bom, e isso. Espero que agora remover itens de um array JavaScript utilizando o valor seja mais facil no seu dia-a-dia.</p>
+
+<p><strong>[ATUALIZADO]</strong></p>
+
+<p>Algumas pessoas se manifestaram no Twitter dizendo que isso e errado. Realmente, existe uma forma bem simples de remover um item de um Array em JavaScript sem saber a posiçao desse item e sem usar jQuery. Segue abaixo:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="nx">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;maça&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pera&#39;</span><span class="p">,</span> <span class="s1">&#39;uva&#39;</span><span class="p">];</span>
+<span class="nx">index</span> <span class="o">=</span> <span class="nx">frutas</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">);</span>
+<span class="nx">frutas</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Utilizamos o <em>indexOf</em> para descobrir qual a posiçao do valor que queremos remover e depois conseguiremos utilizar o <em>splice</em> normalmente.</p>
+
+<p>Agora, sobre a parte de retornar somente os numeros pares, o <a href="http://twitter.com/fnando">Nando Vieira</a> deu uma dica boa:</p>
+
+<div class="highlight"><pre><code class="javascript"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">item</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>
+
+<p><strong>OBS.:</strong> Navegadores antigos nao suportam a funçao <em>filter()</em>. Use por sua conta e risco.</p>
+]]></content:encoded>
+				<link>http://willianfernandes.dev/como-usar-jquery-para-remover-um-item-de-um-array-js</link>
+				<guid isPermaLink="true">http://willianfernandes.dev/como-usar-jquery-para-remover-um-item-de-um-array-js</guid>
+				<pubDate>Fri, 10 Feb 2012 00:00:00 -0200</pubDate>
+			</item>
+		
+			<item>
+				<title>Contrate o Willian Fernandes</title>
+				<description><![CDATA[<p>Como alguns sabem, eu estou trabalhando com a equipe da <a href="http://idopter.com/">idopter</a> em um novo produto, o <a href="http://lancelote.com/">Lancelote</a>. Porém a parceria durou pouco. Com algumas decisões empresariais, o alto custo de manter uma equipe com 5 pessoas para um produto e por ser o membro com menos tempo de casa na equipe chegou a hora de procurar novos desafios.</p>
+
+<p>Como a vida continua, estou disponível para projetos em período integral. Se você tem algum projeto interessante e precisa de um profissional de alto nível em sua equipe, entre em contato através do e-mail/Google Talk <a href="mailto:maurowil@gmail.com">maurowil@gmail.com</a>. Aos que puderem encaminhar este post para pessoas que possam ter interesse em ter-me em suas equipes, um muito obrigado.</p>
+
+<p>Outras formas de contato:
+<ul>
+    <li>Skype: <a href="skype:willianfernan">willianfernan</a></li>
+    <li>Twitter: <a href="http://twitter.com/willian">@willian</a></li>
+</ul></p>
+
+<p><strong>PS: O segundo parágrafo é uma cópia descarada que o <a href="http://twitter.com/fnando">Nando</a> <a href="http://simplesideias.com.br/contrate-o-nando-vieira/">fez</a> e sem autorização prévia</strong>
+<strong>PS2: O PS1 é uma cópia descarada que o <a href="http://twitter.com/tinogomes">Tino Gomes</a> <a href="http://blog.tinogomes.com/2011/05/02/contrate-o-tino-gomes/">fez</a> e sem autorização prévia</strong></p>
+]]></description>
+				<content:encoded><![CDATA[<p>Como alguns sabem, eu estou trabalhando com a equipe da <a href="http://idopter.com/">idopter</a> em um novo produto, o <a href="http://lancelote.com/">Lancelote</a>. Porém a parceria durou pouco. Com algumas decisões empresariais, o alto custo de manter uma equipe com 5 pessoas para um produto e por ser o membro com menos tempo de casa na equipe chegou a hora de procurar novos desafios.</p>
+
+<p>Como a vida continua, estou disponível para projetos em período integral. Se você tem algum projeto interessante e precisa de um profissional de alto nível em sua equipe, entre em contato através do e-mail/Google Talk <a href="mailto:maurowil@gmail.com">maurowil@gmail.com</a>. Aos que puderem encaminhar este post para pessoas que possam ter interesse em ter-me em suas equipes, um muito obrigado.</p>
+
+<p>Outras formas de contato:
+<ul>
+    <li>Skype: <a href="skype:willianfernan">willianfernan</a></li>
+    <li>Twitter: <a href="http://twitter.com/willian">@willian</a></li>
+</ul></p>
+
+<p><strong>PS: O segundo parágrafo é uma cópia descarada que o <a href="http://twitter.com/fnando">Nando</a> <a href="http://simplesideias.com.br/contrate-o-nando-vieira/">fez</a> e sem autorização prévia</strong>
+<strong>PS2: O PS1 é uma cópia descarada que o <a href="http://twitter.com/tinogomes">Tino Gomes</a> <a href="http://blog.tinogomes.com/2011/05/02/contrate-o-tino-gomes/">fez</a> e sem autorização prévia</strong></p>
+]]></content:encoded>
+				<link>http://willianfernandes.dev/contrate-o-willian-fernandes</link>
+				<guid isPermaLink="true">http://willianfernandes.dev/contrate-o-willian-fernandes</guid>
+				<pubDate>Mon, 09 Jan 2012 00:00:00 -0200</pubDate>
+			</item>
+		
+			<item>
+				<title>Faye - Como eu criei um simples chat usando Rails</title>
+				<description><![CDATA[<p>Recentemente precisei criar um chat para integrar com a aplicação da empresa que trabalho. Sim, mais um desenvolvimento de chat. Como dizem por ai, chat é o novo Hello World.</p>
+
+<p>Já tinha ouvido falar do <a href="http://faye.jcoglan.com/">Faye</a>, até o Ryan Bates fez um <a href="http://railscasts.com/episodes/260-messaging-with-faye">Railscasts sobre o assunto</a>.</p>
+
+<p>O Faye tem módulos para Ruby e Node.js.</p>
+
+<p>Minha primeira tentativa foi utilizar a <a href="http://faye.jcoglan.com/ruby.html">versão ruby do Faye</a>. Essa versão nada mais é que uma aplicação Rack. Funcionou muito bem, até chegar em produção. O servidor que ele utiliza é o thin, e para a quantidade de requests que minha aplicação faz ao chat o servidor não durava 3 minutos em pé.</p>
+
+<p>Depois de muito quebrar a cabeça resolvi partir para a <a href="http://faye.jcoglan.com/node.html">versão em Node.js do Faye</a> que resolveu perfeitamente esse problema. Vou mostrar abaixo como fiz para utilizando Faye, Node.js e Rails:</p>
+
+<h2>Vamos ao código</h2>
+
+<p>Primeiro você precisa ter o <a href="http://nodejs.org">Node.js</a> e o <a href="http://npmjs.org">NPM</a> instalados.</p>
+
+<p>Na raiz da aplicação, instale o faye utilizando o npm:
+<pre class="bash"><code>$ npm install faye</code></pre></p>
+
+<p>Logo em seguida, também na raiz da aplicação, criei o arquivo abaixo:
+<strong>faye_server.js</strong>
+<pre class="javascript"><code><span class="kw2">var</span> http = require<span class="br0">&#40;</span><span class="st0">&#39;http&#39;</span><span class="br0">&#41;</span>
+  , faye = require<span class="br0">&#40;</span><span class="st0">&#39;faye&#39;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="kw2">var</span> Logger = <span class="br0">&#123;</span>
+    incoming: <span class="kw2">function</span><span class="br0">&#40;</span>message, callback<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        console.<span class="me1">log</span><span class="br0">&#40;</span>message<span class="br0">&#41;</span>;
+        console.<span class="me1">log</span><span class="br0">&#40;</span><span class="st0">&#39;====================&#39;</span><span class="br0">&#41;</span>;
+&nbsp;
+        callback<span class="br0">&#40;</span>message<span class="br0">&#41;</span>;
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw2">var</span> bayeux = <span class="kw2">new</span> faye.<span class="me1">NodeAdapter</span><span class="br0">&#40;</span><span class="br0">&#123;</span>mount: <span class="st0">&#39;/faye&#39;</span>, timeout: <span class="nu0">60</span><span class="br0">&#125;</span><span class="br0">&#41;</span>;
+bayeux.<span class="me1">addExtension</span><span class="br0">&#40;</span>Logger<span class="br0">&#41;</span>;
+bayeux.<span class="me1">listen</span><span class="br0">&#40;</span><span class="nu0">9292</span><span class="br0">&#41;</span>;
+&nbsp;</code></pre></p>
+
+<p>Para testar se o faye está corretamente instalado e funcionando, rode o servidor:
+<pre class="bash"><code>$ node faye_server.js</code></pre></p>
+
+<p>E abra no seu nevegador a URL <a href="http://localhost:9292/faye.js">http://localhost:9292/faye.js</a>. Se um arquivo JavaScript for carregar, então o Faye está funcionando corretamente. #WIN</p>
+
+<h2>Client-side</h2>
+
+<p>No seu arquivo de layouts (ex.: application.html.erb) você precisa adicionar o JavaScript do Faye:
+<pre class="html4strict"><code><span class="sc2">&lt;%= javascript<em>include</em>tag <span class="st0">&quot;http://localhost:9292/faye.js&quot;</span> %<span class="kw2">&gt;</span></span></code></pre></p>
+
+<p>Agora basta criar uma instância para o Client do Faye e o canal que receberá as mensagens do nosso chat:
+<strong>application.js</strong>
+<pre class="javascript"><code>$<span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw2">var</span> faye<em>client = <span class="kw2">new</span> Faye.<span class="me1">Client</span><span class="br0">&#40;</span><span class="st0">&#39;http://localhost:9292/faye&#39;</span><span class="br0">&#41;</span>;
+    faye</em>client.<span class="me1">subscribe</span><span class="br0">&#40;</span><span class="st0">&#39;/chat&#39;</span> , <span class="kw2">function</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">eval</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span>;
+    <span class="br0">&#125;</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+&nbsp;</code></pre></p>
+
+<h2>Back-end</h2>
+
+<p>Criei um simples formulário que faz um POST para MessagesController::create utilizando AJAX:
+<strong>app/views/messages/index.html.erb</strong>
+<pre class="rails"><code>&lt;h1&gt;Messages&lt;/h1&gt;
+&nbsp;
+&lt;div id=<span class="st0">&quot;messages&quot;</span>&gt;
+    &lt;ol&gt;&lt;/ol&gt;
+&lt;/div&gt;
+&nbsp;
+&lt;%= <span class="kw5">form<em>for</span> <span class="re1">@message</span>, remote: <span class="kw2">true</span> <span class="kw1">do</span> |f| %&gt;
+    &lt;%= f.<span class="me1">label</span> <span class="re3">:content</span> %&gt;
+    &lt;%= f.<span class="kw5">text</em>field</span> <span class="re3">:content</span> %&gt;
+    &lt;%= f.<span class="me1">submit</span> <span class="st0">&quot;Send&quot;</span> %&gt;
+&lt;% <span class="kw1">end</span> %&gt;
+&nbsp;</code></pre></p>
+
+<p>E no controller MessagesController:
+<pre class="rails"><code><span class="kw1">class</span> MessagesController &lt; ApplicationController
+  <span class="kw1">def</span> index
+    <span class="re1">@message</span> = Message.<span class="kw5">new</span>
+  <span class="kw1">end</span>
+&nbsp;
+  <span class="kw1">def</span> create
+    <span class="re1">@message</span> = Message.<span class="kw5">create</span><span class="br0">&#40;</span>params<span class="br0">&#91;</span><span class="re3">:message</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+  <span class="kw1">end</span>
+<span class="kw1">end</span>
+&nbsp;</code></pre></p>
+
+<p>Simples, certo?</p>
+
+<p>O segredo está na view <code>app/views/messages/create.js.erb</code>:
+<pre class="rails"><code>&lt;% broadcast <span class="st0">&quot;/chat&quot;</span> <span class="kw1">do</span> %&gt;
+    $<span class="br0">&#40;</span><span class="st0">&quot;#messages ol&quot;</span><span class="br0">&#41;</span>.<span class="me1">append</span><span class="br0">&#40;</span>$<span class="br0">&#40;</span><span class="st0">&quot;&lt;li&gt;&lt;%= @message.content %&gt;&lt;/li&gt;&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+&lt;% <span class="kw1">end</span> %&gt;
+$<span class="br0">&#40;</span><span class="st0">&quot;#message_content&quot;</span><span class="br0">&#41;</span>.<span class="me1">val</span><span class="br0">&#40;</span><span class="st0">&#39;&#39;</span><span class="br0">&#41;</span>;
+&nbsp;</code></pre></p>
+
+<p>Seguindo a dica do Ryan Bates, criei um helper para facilitar o envio das mensagens para o Faye Server. Ele será responsável em fazer o broadcast para todos os usuários conectados no chat.</p>
+
+<p><code>app/helpers/messages<em>helper.rb</code>
+<pre class="rails"><code><span class="kw1">module</span> MessagesHelper
+  <span class="kw1">def</span> broadcast<span class="br0">&#40;</span>channel, &amp;block<span class="br0">&#41;</span>
+    message = <span class="br0">&#123;</span> channel: channel, data: capture<span class="br0">&#40;</span>&amp;block<span class="br0">&#41;</span> <span class="br0">&#125;</span>
+    uri     = <span class="kw4">URI</span>.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">&quot;http://localhost:9292/faye&quot;</span><span class="br0">&#41;</span>
+    <span class="re2">Net::HTTP</span>.<span class="me1">post</em>form</span><span class="br0">&#40;</span>uri, message: message.<span class="me1">to_json</span><span class="br0">&#41;</span>
+  <span class="kw1">end</span>
+<span class="kw1">end</span>
+&nbsp;</code></pre></p>
+
+<p>Como este helper está usando o <code>Net::HTTP</code>, precisamos adicioná-lo na nossa aplicação. Eu normalmente faço o <code>require</code> dessa lib no arquivo <code>config/application.rb</code>:
+<pre class="rails"><code><span class="co1"># ...</span>
+&nbsp;
+<span class="kw3">require</span> <span class="st0">&#39;rails/all&#39;</span>
+<span class="kw3">require</span> <span class="st0">&#39;net/http&#39;</span>
+&nbsp;
+<span class="co1"># ...</span></code></pre></p>
+
+<p>Com isso nosso chat está pronto!</p>
+
+<p>Lógico que na minha aplicação existem processos um pouco mais complexos, lidando com chat privado (estilo Facebook) e autenticação de usuários. Mas para exemplo, esse caso mais simples vale.</p>
+
+<p>Você pode baixar a aplicação completa diretamente do meu GitHub:
+<a href="https://github.com/willian/faye_chat_example">https://github.com/willian/faye<em>chat</em>example</a></p>
+
+<p>Fácil, não!? :)</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Recentemente precisei criar um chat para integrar com a aplicação da empresa que trabalho. Sim, mais um desenvolvimento de chat. Como dizem por ai, chat é o novo Hello World.</p>
+
+<p>Já tinha ouvido falar do <a href="http://faye.jcoglan.com/">Faye</a>, até o Ryan Bates fez um <a href="http://railscasts.com/episodes/260-messaging-with-faye">Railscasts sobre o assunto</a>.</p>
+
+<p>O Faye tem módulos para Ruby e Node.js.</p>
+
+<p>Minha primeira tentativa foi utilizar a <a href="http://faye.jcoglan.com/ruby.html">versão ruby do Faye</a>. Essa versão nada mais é que uma aplicação Rack. Funcionou muito bem, até chegar em produção. O servidor que ele utiliza é o thin, e para a quantidade de requests que minha aplicação faz ao chat o servidor não durava 3 minutos em pé.</p>
+
+<p>Depois de muito quebrar a cabeça resolvi partir para a <a href="http://faye.jcoglan.com/node.html">versão em Node.js do Faye</a> que resolveu perfeitamente esse problema. Vou mostrar abaixo como fiz para utilizando Faye, Node.js e Rails:</p>
+
+<h2>Vamos ao código</h2>
+
+<p>Primeiro você precisa ter o <a href="http://nodejs.org">Node.js</a> e o <a href="http://npmjs.org">NPM</a> instalados.</p>
+
+<p>Na raiz da aplicação, instale o faye utilizando o npm:
+<pre class="bash"><code>$ npm install faye</code></pre></p>
+
+<p>Logo em seguida, também na raiz da aplicação, criei o arquivo abaixo:
+<strong>faye_server.js</strong>
+<pre class="javascript"><code><span class="kw2">var</span> http = require<span class="br0">&#40;</span><span class="st0">&#39;http&#39;</span><span class="br0">&#41;</span>
+  , faye = require<span class="br0">&#40;</span><span class="st0">&#39;faye&#39;</span><span class="br0">&#41;</span>;
+&nbsp;
+<span class="kw2">var</span> Logger = <span class="br0">&#123;</span>
+    incoming: <span class="kw2">function</span><span class="br0">&#40;</span>message, callback<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        console.<span class="me1">log</span><span class="br0">&#40;</span>message<span class="br0">&#41;</span>;
+        console.<span class="me1">log</span><span class="br0">&#40;</span><span class="st0">&#39;====================&#39;</span><span class="br0">&#41;</span>;
+&nbsp;
+        callback<span class="br0">&#40;</span>message<span class="br0">&#41;</span>;
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span>;
+&nbsp;
+<span class="kw2">var</span> bayeux = <span class="kw2">new</span> faye.<span class="me1">NodeAdapter</span><span class="br0">&#40;</span><span class="br0">&#123;</span>mount: <span class="st0">&#39;/faye&#39;</span>, timeout: <span class="nu0">60</span><span class="br0">&#125;</span><span class="br0">&#41;</span>;
+bayeux.<span class="me1">addExtension</span><span class="br0">&#40;</span>Logger<span class="br0">&#41;</span>;
+bayeux.<span class="me1">listen</span><span class="br0">&#40;</span><span class="nu0">9292</span><span class="br0">&#41;</span>;
+&nbsp;</code></pre></p>
+
+<p>Para testar se o faye está corretamente instalado e funcionando, rode o servidor:
+<pre class="bash"><code>$ node faye_server.js</code></pre></p>
+
+<p>E abra no seu nevegador a URL <a href="http://localhost:9292/faye.js">http://localhost:9292/faye.js</a>. Se um arquivo JavaScript for carregar, então o Faye está funcionando corretamente. #WIN</p>
+
+<h2>Client-side</h2>
+
+<p>No seu arquivo de layouts (ex.: application.html.erb) você precisa adicionar o JavaScript do Faye:
+<pre class="html4strict"><code><span class="sc2">&lt;%= javascript<em>include</em>tag <span class="st0">&quot;http://localhost:9292/faye.js&quot;</span> %<span class="kw2">&gt;</span></span></code></pre></p>
+
+<p>Agora basta criar uma instância para o Client do Faye e o canal que receberá as mensagens do nosso chat:
+<strong>application.js</strong>
+<pre class="javascript"><code>$<span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw2">var</span> faye<em>client = <span class="kw2">new</span> Faye.<span class="me1">Client</span><span class="br0">&#40;</span><span class="st0">&#39;http://localhost:9292/faye&#39;</span><span class="br0">&#41;</span>;
+    faye</em>client.<span class="me1">subscribe</span><span class="br0">&#40;</span><span class="st0">&#39;/chat&#39;</span> , <span class="kw2">function</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">eval</span><span class="br0">&#40;</span>data<span class="br0">&#41;</span>;
+    <span class="br0">&#125;</span><span class="br0">&#41;</span>;
+<span class="br0">&#125;</span><span class="br0">&#41;</span>;
+&nbsp;</code></pre></p>
+
+<h2>Back-end</h2>
+
+<p>Criei um simples formulário que faz um POST para MessagesController::create utilizando AJAX:
+<strong>app/views/messages/index.html.erb</strong>
+<pre class="rails"><code>&lt;h1&gt;Messages&lt;/h1&gt;
+&nbsp;
+&lt;div id=<span class="st0">&quot;messages&quot;</span>&gt;
+    &lt;ol&gt;&lt;/ol&gt;
+&lt;/div&gt;
+&nbsp;
+&lt;%= <span class="kw5">form<em>for</span> <span class="re1">@message</span>, remote: <span class="kw2">true</span> <span class="kw1">do</span> |f| %&gt;
+    &lt;%= f.<span class="me1">label</span> <span class="re3">:content</span> %&gt;
+    &lt;%= f.<span class="kw5">text</em>field</span> <span class="re3">:content</span> %&gt;
+    &lt;%= f.<span class="me1">submit</span> <span class="st0">&quot;Send&quot;</span> %&gt;
+&lt;% <span class="kw1">end</span> %&gt;
+&nbsp;</code></pre></p>
+
+<p>E no controller MessagesController:
+<pre class="rails"><code><span class="kw1">class</span> MessagesController &lt; ApplicationController
+  <span class="kw1">def</span> index
+    <span class="re1">@message</span> = Message.<span class="kw5">new</span>
+  <span class="kw1">end</span>
+&nbsp;
+  <span class="kw1">def</span> create
+    <span class="re1">@message</span> = Message.<span class="kw5">create</span><span class="br0">&#40;</span>params<span class="br0">&#91;</span><span class="re3">:message</span><span class="br0">&#93;</span><span class="br0">&#41;</span>
+  <span class="kw1">end</span>
+<span class="kw1">end</span>
+&nbsp;</code></pre></p>
+
+<p>Simples, certo?</p>
+
+<p>O segredo está na view <code>app/views/messages/create.js.erb</code>:
+<pre class="rails"><code>&lt;% broadcast <span class="st0">&quot;/chat&quot;</span> <span class="kw1">do</span> %&gt;
+    $<span class="br0">&#40;</span><span class="st0">&quot;#messages ol&quot;</span><span class="br0">&#41;</span>.<span class="me1">append</span><span class="br0">&#40;</span>$<span class="br0">&#40;</span><span class="st0">&quot;&lt;li&gt;&lt;%= @message.content %&gt;&lt;/li&gt;&quot;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>;
+&lt;% <span class="kw1">end</span> %&gt;
+$<span class="br0">&#40;</span><span class="st0">&quot;#message_content&quot;</span><span class="br0">&#41;</span>.<span class="me1">val</span><span class="br0">&#40;</span><span class="st0">&#39;&#39;</span><span class="br0">&#41;</span>;
+&nbsp;</code></pre></p>
+
+<p>Seguindo a dica do Ryan Bates, criei um helper para facilitar o envio das mensagens para o Faye Server. Ele será responsável em fazer o broadcast para todos os usuários conectados no chat.</p>
+
+<p><code>app/helpers/messages<em>helper.rb</code>
+<pre class="rails"><code><span class="kw1">module</span> MessagesHelper
+  <span class="kw1">def</span> broadcast<span class="br0">&#40;</span>channel, &amp;block<span class="br0">&#41;</span>
+    message = <span class="br0">&#123;</span> channel: channel, data: capture<span class="br0">&#40;</span>&amp;block<span class="br0">&#41;</span> <span class="br0">&#125;</span>
+    uri     = <span class="kw4">URI</span>.<span class="me1">parse</span><span class="br0">&#40;</span><span class="st0">&quot;http://localhost:9292/faye&quot;</span><span class="br0">&#41;</span>
+    <span class="re2">Net::HTTP</span>.<span class="me1">post</em>form</span><span class="br0">&#40;</span>uri, message: message.<span class="me1">to_json</span><span class="br0">&#41;</span>
+  <span class="kw1">end</span>
+<span class="kw1">end</span>
+&nbsp;</code></pre></p>
+
+<p>Como este helper está usando o <code>Net::HTTP</code>, precisamos adicioná-lo na nossa aplicação. Eu normalmente faço o <code>require</code> dessa lib no arquivo <code>config/application.rb</code>:
+<pre class="rails"><code><span class="co1"># ...</span>
+&nbsp;
+<span class="kw3">require</span> <span class="st0">&#39;rails/all&#39;</span>
+<span class="kw3">require</span> <span class="st0">&#39;net/http&#39;</span>
+&nbsp;
+<span class="co1"># ...</span></code></pre></p>
+
+<p>Com isso nosso chat está pronto!</p>
+
+<p>Lógico que na minha aplicação existem processos um pouco mais complexos, lidando com chat privado (estilo Facebook) e autenticação de usuários. Mas para exemplo, esse caso mais simples vale.</p>
+
+<p>Você pode baixar a aplicação completa diretamente do meu GitHub:
+<a href="https://github.com/willian/faye_chat_example">https://github.com/willian/faye<em>chat</em>example</a></p>
+
+<p>Fácil, não!? :)</p>
+]]></content:encoded>
+				<link>http://willianfernandes.dev/faye-como-eu-criei-um-simples-chat-usando-rails</link>
+				<guid isPermaLink="true">http://willianfernandes.dev/faye-como-eu-criei-um-simples-chat-usando-rails</guid>
+				<pubDate>Tue, 08 Nov 2011 00:00:00 -0200</pubDate>
+			</item>
+		
+			<item>
+				<title>Desabilitando Asset Pipeline no Rails 3.1</title>
+				<description><![CDATA[<p>Se você é como eu e não gostou do assets pipeline que vem habilitado nativamente no rails 3.1, saiba que você pode desabilitá-lo. Para isso, basta editar o arquivo <code>application.rb</code>:</p>
+
+<pre class="ruby"><code><span class="co1"># Enable the asset pipeline</span>
+config.<span class="me1">assets</span>.<span class="me1">enabled</span> = <span class="kw2">false</span></code></pre>
+
+<p>Essa notícia não é nova, porém poucos sabem que ao desabilitar este recurso os arquivos <code>controller<em>name.js</code> e <code>controller</em>name.css</code> continuam sendo gerados no diretório <code>app/assets/</code>. Veja:</p>
+
+<pre class="bash"><code>$ rails g controller users
+  create  app/controllers/users_controller.rb
+  invoke  erb
+  create    app/views/users
+  invoke  rspec
+  create    spec/controllers/users_controller_spec.rb
+  invoke  helper
+  create    app/helpers/users_helper.rb
+  invoke    rspec
+  create      spec/helpers/users_helper_spec.rb
+  invoke  assets
+  invoke    js
+  create      app/assets/javascripts/users.js
+  invoke    css
+  create      app/assets/stylesheets/users.css</code></pre>
+
+<p>Para evitar que isso aconteça basta fazer a configuração abaixo também no arquivo <code>application.rb</code>:</p>
+
+<pre class="ruby"><code>config.<span class="me1">generators</span> <span class="kw1">do</span> |g|
+  g.<span class="me1">assets</span> <span class="kw2">false</span>
+<span class="kw1">end</span></code></pre>
+
+<p>Com isso ao rodar o generator de controller teremos:</p>
+
+<pre class="bash"><code>$ rails g controller users
+  create  app/controllers/users_controller.rb
+  invoke  erb
+  create    app/views/users
+  invoke  rspec
+  create    spec/controllers/users_controller_spec.rb
+  invoke  helper
+  create    app/helpers/users_helper.rb
+  invoke    rspec
+  create      spec/helpers/users_helper_spec.rb</code></pre>
+
+<p>Fica então a dica.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Se você é como eu e não gostou do assets pipeline que vem habilitado nativamente no rails 3.1, saiba que você pode desabilitá-lo. Para isso, basta editar o arquivo <code>application.rb</code>:</p>
+
+<pre class="ruby"><code><span class="co1"># Enable the asset pipeline</span>
+config.<span class="me1">assets</span>.<span class="me1">enabled</span> = <span class="kw2">false</span></code></pre>
+
+<p>Essa notícia não é nova, porém poucos sabem que ao desabilitar este recurso os arquivos <code>controller<em>name.js</code> e <code>controller</em>name.css</code> continuam sendo gerados no diretório <code>app/assets/</code>. Veja:</p>
+
+<pre class="bash"><code>$ rails g controller users
+  create  app/controllers/users_controller.rb
+  invoke  erb
+  create    app/views/users
+  invoke  rspec
+  create    spec/controllers/users_controller_spec.rb
+  invoke  helper
+  create    app/helpers/users_helper.rb
+  invoke    rspec
+  create      spec/helpers/users_helper_spec.rb
+  invoke  assets
+  invoke    js
+  create      app/assets/javascripts/users.js
+  invoke    css
+  create      app/assets/stylesheets/users.css</code></pre>
+
+<p>Para evitar que isso aconteça basta fazer a configuração abaixo também no arquivo <code>application.rb</code>:</p>
+
+<pre class="ruby"><code>config.<span class="me1">generators</span> <span class="kw1">do</span> |g|
+  g.<span class="me1">assets</span> <span class="kw2">false</span>
+<span class="kw1">end</span></code></pre>
+
+<p>Com isso ao rodar o generator de controller teremos:</p>
+
+<pre class="bash"><code>$ rails g controller users
+  create  app/controllers/users_controller.rb
+  invoke  erb
+  create    app/views/users
+  invoke  rspec
+  create    spec/controllers/users_controller_spec.rb
+  invoke  helper
+  create    app/helpers/users_helper.rb
+  invoke    rspec
+  create      spec/helpers/users_helper_spec.rb</code></pre>
+
+<p>Fica então a dica.</p>
+]]></content:encoded>
+				<link>http://willianfernandes.dev/desabilitando-asset-pipeline-no-rails-3-1</link>
+				<guid isPermaLink="true">http://willianfernandes.dev/desabilitando-asset-pipeline-no-rails-3-1</guid>
+				<pubDate>Sat, 22 Oct 2011 00:00:00 -0200</pubDate>
+			</item>
+		
+			<item>
+				<title>Dica rápida: RVM 1.8.1</title>
+				<description><![CDATA[<p><a href="https://github.com/wayneeseguin/rvm/issues/403">Pelo o que parece</a>, a versão atual (1.8.1) do <a href="https://rvm.beginrescueend.com/">RVM</a> não está funcionando para usuários Mac.</p>
+
+<p>Se você tentar instalar qualquer versão do ruby com essa versão do RVM terá o erro:</p>
+
+<p><code>Trying http:// URL instead.
+curl: (3) malformed</code></p>
+
+<p>Para funcionar corretamente tive que instalar a versão anterior, a 1.8.0:</p>
+
+<p><code>curl -s https://rvm.beginrescueend.com/install/rvm -o rvm-installer ; chmod +x rvm-installer ; ./rvm-installer --version 1.8.0</code></p>
+
+<p>Agora é esperar que eles lancem a correção na versão 1.8.2 para que os usuários Mac possam atualizar o RVM.</p>
+
+<h1>fikdik</h1>
+]]></description>
+				<content:encoded><![CDATA[<p><a href="https://github.com/wayneeseguin/rvm/issues/403">Pelo o que parece</a>, a versão atual (1.8.1) do <a href="https://rvm.beginrescueend.com/">RVM</a> não está funcionando para usuários Mac.</p>
+
+<p>Se você tentar instalar qualquer versão do ruby com essa versão do RVM terá o erro:</p>
+
+<p><code>Trying http:// URL instead.
+curl: (3) malformed</code></p>
+
+<p>Para funcionar corretamente tive que instalar a versão anterior, a 1.8.0:</p>
+
+<p><code>curl -s https://rvm.beginrescueend.com/install/rvm -o rvm-installer ; chmod +x rvm-installer ; ./rvm-installer --version 1.8.0</code></p>
+
+<p>Agora é esperar que eles lancem a correção na versão 1.8.2 para que os usuários Mac possam atualizar o RVM.</p>
+
+<h1>fikdik</h1>
+]]></content:encoded>
+				<link>http://willianfernandes.dev/dica-rapida-rvm-1-8-1</link>
+				<guid isPermaLink="true">http://willianfernandes.dev/dica-rapida-rvm-1-8-1</guid>
+				<pubDate>Tue, 06 Sep 2011 00:00:00 -0300</pubDate>
+			</item>
+		
+			<item>
+				<title>RailsConf 2011</title>
+				<description><![CDATA[<p>Para quem não sabe dia 16 de maio acontecerá o <a href="http://en.oreilly.com/rails2011">RailsConf 2011</a>. O evento será novamente em Baltimore e vai até o dia 19.</p>
+
+<p>Eu nunca viajei para fora do país e minha primeira experiência será um tanto quanto interessante. Embarco dia 13 e chego dia 14, de madrugada, em Washington D.C, vou para Baltimore de carro no dia 15 e dia 20 volto para Washington onde fico até o dia 22. Dia 22 mesmo chego no Brasil.</p>
+
+<p>Enfim, quero saber quem mais do Brasil estará por lá para marcar um #horaextra em Baltimore, ou em Washington.</p>
+
+<p>Postarei no blog e no <a href="http://twitter.com/willian">twitter</a> a experiência de participar desse grande evento e de estar nos States.</p>
+
+<p>Até lá!</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Para quem não sabe dia 16 de maio acontecerá o <a href="http://en.oreilly.com/rails2011">RailsConf 2011</a>. O evento será novamente em Baltimore e vai até o dia 19.</p>
+
+<p>Eu nunca viajei para fora do país e minha primeira experiência será um tanto quanto interessante. Embarco dia 13 e chego dia 14, de madrugada, em Washington D.C, vou para Baltimore de carro no dia 15 e dia 20 volto para Washington onde fico até o dia 22. Dia 22 mesmo chego no Brasil.</p>
+
+<p>Enfim, quero saber quem mais do Brasil estará por lá para marcar um #horaextra em Baltimore, ou em Washington.</p>
+
+<p>Postarei no blog e no <a href="http://twitter.com/willian">twitter</a> a experiência de participar desse grande evento e de estar nos States.</p>
+
+<p>Até lá!</p>
+]]></content:encoded>
+				<link>http://willianfernandes.dev/railsconf-2011</link>
+				<guid isPermaLink="true">http://willianfernandes.dev/railsconf-2011</guid>
+				<pubDate>Wed, 04 May 2011 00:00:00 -0300</pubDate>
+			</item>
+		
+			<item>
+				<title>Novo layout</title>
+				<description><![CDATA[<p>Depois de quase um ano usando o layout padrão do Wordpress, resolvi criar um próprio e ver se assim me animo a escrever com mais frequencia por aqui.
+Aproveitei para me aventurar um pouco no HTML 5 e CSS3 e provavelmente algumas coisas ainda quebrem em algum browser até que eu consiga ajeitar tudo por aqui.</p>
+
+<p>Caso você esteja lendo esse post em um leitor de feeds, segue abaixo uma Screen shot de como ficou:
+<img src="http://willianfernandes.com.br/wp-content/uploads/2011/01/novo-layout.png" alt="Novo layout" title="Novo layout" width="800" height="593" class="aligncenter size-full wp-image-166" /></p>
+
+<p>Tem alguma sugestão? Mande no comentário.</p>
+
+<p>Até!</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Depois de quase um ano usando o layout padrão do Wordpress, resolvi criar um próprio e ver se assim me animo a escrever com mais frequencia por aqui.
+Aproveitei para me aventurar um pouco no HTML 5 e CSS3 e provavelmente algumas coisas ainda quebrem em algum browser até que eu consiga ajeitar tudo por aqui.</p>
+
+<p>Caso você esteja lendo esse post em um leitor de feeds, segue abaixo uma Screen shot de como ficou:
+<img src="http://willianfernandes.com.br/wp-content/uploads/2011/01/novo-layout.png" alt="Novo layout" title="Novo layout" width="800" height="593" class="aligncenter size-full wp-image-166" /></p>
+
+<p>Tem alguma sugestão? Mande no comentário.</p>
+
+<p>Até!</p>
+]]></content:encoded>
+				<link>http://willianfernandes.dev/novo-layout-2011</link>
+				<guid isPermaLink="true">http://willianfernandes.dev/novo-layout-2011</guid>
+				<pubDate>Mon, 31 Jan 2011 00:00:00 -0200</pubDate>
+			</item>
+		
+			<item>
+				<title>Meu ambiente de desenvolvimento</title>
+				<description><![CDATA[<p>Fui convidado pelo <a href="http://twitter.com/jtadeulopes" rel="external">Jésus Lopes</a> (<a href="http://jlopes.zigotto.com.br/dicas/meu-ambiente-de-desenvolvimento" rel="external">post</a>) para falar um pouco sobre meu ambiente. Então segue abaixo o que eu uso no dia-a-dia. </p>
+
+<h2>Macs</h2>
+
+<p>Desde fevereiro de 2008 trabalho exclusivamente com <a href="http://www.apple.com/macosx/" rel="external">Mac OS X</a>. No trabalho tenho um iMac Core 2 Duo 2.4 GHz com 4 GB de memória com Snow Leopard rodando.
+Em casa uso meu bom e velho (ok, nem tão bom assim) MacBook preto, também com Snow Leopard mas com apenas 2 GB de memória. :(</p>
+
+<h2>Editor</h2>
+
+<p>Quando trabalhava exclusivamente com Linux (Ubuntu) usava somente o Vim, mas nunca parei para realmente aprender a usá-lo. E quando migrei para o Mac conheci o <a href="http://macromates.com/" rel="external">TextMate</a> e nunca mais troquei.</p>
+
+<p>Com o mate me sinto em casa. Aprendi rapidamente seus atalhos, conheci e instalei alguns <a href="https://github.com/willian/textmate-bundles" rel="external">Bundles</a> para me ajudar no dia-a-dia e sei que não preciso de mais nada para programar feliz.</p>
+
+<p>Ainda uso o Vim para coisas nos servidores e de vez em quando para brincar e aprender um pouco mais sobre ele. Não, não pretendo trocar de editor. Mas pode ser que um dia precise e se precisar vou usar feliz da vida.</p>
+
+<h2>Terminal</h2>
+
+<p>A freqüência com que uso o terminal é igual ou até mesmo maior do que com o TextMate. E nele fiz algumas <a href="http://simplesideias.com.br/configurando-o-terminal-no-mac-os-x/" rel="external">configuração sugeridas pelo Nando Vieira</a>. <a href="https://github.com/willian/dotfiles" rel="external">Meu .bashrc pode ser encontrado em meu GitHub</a>.</p>
+
+<h2>Browser</h2>
+
+<p>Meu navegador padrão se tornou o Safari assim que adotei a plataforma Mac. Uso Chrome e Firefox apenas para desenvolvimento e olhe lá! ;)</p>
+
+<h2>Versionamento</h2>
+
+<p>Desde 2008 uso apenas o git para controlar meus projetos. SVN apenas quando preciso fazer checkout de algo.</p>
+
+<h2>Linguagens de programação</h2>
+
+<p>Uso Ruby a maior parte do dia. Mas também não fico uma semana se quer sem brincar com JavaScript. Node.js tem me chamado muita atenção e JS está voltando a fazer cada vez mais parte dos meus desenvolvimentos.</p>
+
+<h2>Outros programas</h2>
+
+<ol>
+    <li><a href="http://www.apple.com/safari/" rel="external">Safari</a>;</li>
+    <li><a href="http://alfredapp.com/" rel="external">Alfred</a>: abandonei o QuickSilver faz alguns meses;</li>
+    <li><a href="http://www.apple.com/macosx/what-is-macosx/itunes.html" rel="external">iTunes</a>: <a href="http://last.fm/user/maurowil" rel="external">ouço música o tempo todo</a>;</li>
+    <li><a href="http://sites.google.com/site/yorufukurou/" rel="external">YoruFukurou</a></li>
+    <li><a href="http://www.apple.com/iwork/keynote/" rel="external">Keynote</a></li>
+    <li><a href="http://www.apple.com/iwork/pages/" rel="external">Pages</a></li>
+    <li><a href="http://reederapp.com/" rel="external">Reeder</a></li>
+    <li><a href="http://macromates.com/" rel="external">TextMate</a></li>
+    <li>Terminal</li>
+    <li><a href="http://www.apple.com/macosx/what-is-macosx/ichat.html" rel="external">iChat</a></li>
+    <li><a href="http://dropbox.com/" rel="external">Dropbox</a></li>
+    <li><a href="http://musicbrainz.org/doc/PicardDownload" rel="external">MusicBrainz Picard</a></li>
+    <li><a href="http://www.apple.com/quicktime/" rel="external">Quicktime</a></li>
+</ol>
+
+<p>Então agora convido @<a href="http://twitter.com/tinogomes">tinogomes</a> e @<a href="http://twitter.com/lucashungaro">lucashungaro</a> para contarem do seus ambientes.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Fui convidado pelo <a href="http://twitter.com/jtadeulopes" rel="external">Jésus Lopes</a> (<a href="http://jlopes.zigotto.com.br/dicas/meu-ambiente-de-desenvolvimento" rel="external">post</a>) para falar um pouco sobre meu ambiente. Então segue abaixo o que eu uso no dia-a-dia. </p>
+
+<h2>Macs</h2>
+
+<p>Desde fevereiro de 2008 trabalho exclusivamente com <a href="http://www.apple.com/macosx/" rel="external">Mac OS X</a>. No trabalho tenho um iMac Core 2 Duo 2.4 GHz com 4 GB de memória com Snow Leopard rodando.
+Em casa uso meu bom e velho (ok, nem tão bom assim) MacBook preto, também com Snow Leopard mas com apenas 2 GB de memória. :(</p>
+
+<h2>Editor</h2>
+
+<p>Quando trabalhava exclusivamente com Linux (Ubuntu) usava somente o Vim, mas nunca parei para realmente aprender a usá-lo. E quando migrei para o Mac conheci o <a href="http://macromates.com/" rel="external">TextMate</a> e nunca mais troquei.</p>
+
+<p>Com o mate me sinto em casa. Aprendi rapidamente seus atalhos, conheci e instalei alguns <a href="https://github.com/willian/textmate-bundles" rel="external">Bundles</a> para me ajudar no dia-a-dia e sei que não preciso de mais nada para programar feliz.</p>
+
+<p>Ainda uso o Vim para coisas nos servidores e de vez em quando para brincar e aprender um pouco mais sobre ele. Não, não pretendo trocar de editor. Mas pode ser que um dia precise e se precisar vou usar feliz da vida.</p>
+
+<h2>Terminal</h2>
+
+<p>A freqüência com que uso o terminal é igual ou até mesmo maior do que com o TextMate. E nele fiz algumas <a href="http://simplesideias.com.br/configurando-o-terminal-no-mac-os-x/" rel="external">configuração sugeridas pelo Nando Vieira</a>. <a href="https://github.com/willian/dotfiles" rel="external">Meu .bashrc pode ser encontrado em meu GitHub</a>.</p>
+
+<h2>Browser</h2>
+
+<p>Meu navegador padrão se tornou o Safari assim que adotei a plataforma Mac. Uso Chrome e Firefox apenas para desenvolvimento e olhe lá! ;)</p>
+
+<h2>Versionamento</h2>
+
+<p>Desde 2008 uso apenas o git para controlar meus projetos. SVN apenas quando preciso fazer checkout de algo.</p>
+
+<h2>Linguagens de programação</h2>
+
+<p>Uso Ruby a maior parte do dia. Mas também não fico uma semana se quer sem brincar com JavaScript. Node.js tem me chamado muita atenção e JS está voltando a fazer cada vez mais parte dos meus desenvolvimentos.</p>
+
+<h2>Outros programas</h2>
+
+<ol>
+    <li><a href="http://www.apple.com/safari/" rel="external">Safari</a>;</li>
+    <li><a href="http://alfredapp.com/" rel="external">Alfred</a>: abandonei o QuickSilver faz alguns meses;</li>
+    <li><a href="http://www.apple.com/macosx/what-is-macosx/itunes.html" rel="external">iTunes</a>: <a href="http://last.fm/user/maurowil" rel="external">ouço música o tempo todo</a>;</li>
+    <li><a href="http://sites.google.com/site/yorufukurou/" rel="external">YoruFukurou</a></li>
+    <li><a href="http://www.apple.com/iwork/keynote/" rel="external">Keynote</a></li>
+    <li><a href="http://www.apple.com/iwork/pages/" rel="external">Pages</a></li>
+    <li><a href="http://reederapp.com/" rel="external">Reeder</a></li>
+    <li><a href="http://macromates.com/" rel="external">TextMate</a></li>
+    <li>Terminal</li>
+    <li><a href="http://www.apple.com/macosx/what-is-macosx/ichat.html" rel="external">iChat</a></li>
+    <li><a href="http://dropbox.com/" rel="external">Dropbox</a></li>
+    <li><a href="http://musicbrainz.org/doc/PicardDownload" rel="external">MusicBrainz Picard</a></li>
+    <li><a href="http://www.apple.com/quicktime/" rel="external">Quicktime</a></li>
+</ol>
+
+<p>Então agora convido @<a href="http://twitter.com/tinogomes">tinogomes</a> e @<a href="http://twitter.com/lucashungaro">lucashungaro</a> para contarem do seus ambientes.</p>
+]]></content:encoded>
+				<link>http://willianfernandes.dev/meu-ambiente-de-desenvolvimento</link>
+				<guid isPermaLink="true">http://willianfernandes.dev/meu-ambiente-de-desenvolvimento</guid>
+				<pubDate>Mon, 31 Jan 2011 00:00:00 -0200</pubDate>
+			</item>
+		
+			<item>
+				<title>Testando Sinatra com RSpec (dica para quem usa Rails Metal)</title>
+				<description><![CDATA[<p>Após ler o <a href="http://www.mouseoverstudio.com/blog/2010/06/16/testando-sinatra-com-rspec/">post do Diego Carrion</a> sobre como usar <a href="http://sledge.boo-box.com/list/page/cnVieStyYWlscytSU3BlY18jI19jbG91ZF8jI190YWdnaW5nLXRvb2wtd3BfIyNf-64" class="bbli">RSpec<img src="http://boo-box.com/bbli" alt="[bb]" class="bbic" /></a> para testar uma aplicação <a href="http://www.sinatrarb.com/">Sinatra</a>, lembrei que tive um problema com os testes quando trouxe a aplicação feita em Sinatra para uma outra feita em <a href="http://sledge.boo-box.com/list/page/cnVieStSYWlsc18jI19jbG91ZF8jI190YWdnaW5nLXRvb2wtd3BfIyNf-56" class="bbli">Rails<img src="http://boo-box.com/bbli" alt="[bb]" class="bbic" /></a> usando <a href="http://railscasts.com/episodes/150-rails-metal">Rails Metal</a>.</p>
+
+<p>Vou usar o exemplo do Carrion para mostrar o que precisei mudar para os testes rodarem dentro do Rails Metal. Se no Sinatra usamos o <em>spec_helper.rb</em> assim:</p>
+
+<pre class="ruby"><code><span class="kw3">require</span> <span class="kw4">File</span>.<span class="me1">join</span><span class="br0">&#40;</span><span class="kw4">File</span>.<span class="me1">dirname</span><span class="br0">&#40;</span><span class="kw2">__FILE__</span><span class="br0">&#41;</span>, <span class="st0">'..'</span>, <span class="st0">'main.rb'</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw3">require</span> <span class="st0">'spec'</span>
+<span class="kw3">require</span> <span class="st0">'rack/test'</span>
+&nbsp;
+<span class="re2">Spec::Runner</span>.<span class="me1">configure</span> <span class="kw1">do</span> |conf|
+  conf.<span class="kw1">include</span> <span class="re2">Rack::<span class="kw4">Test</span>::Methods</span>
+<span class="kw1">end</span>
+&nbsp;
+<span class="kw1">def</span> app
+  <span class="re2">Sinatra::Application</span>
+<span class="kw1">end</span></code></pre>
+
+<p>No Rails Metal precisamos usar o arquivo <em>spec_helper.rb</em> normal, da forma como ele for gerado pelo RSpec.</p>
+
+<p>A classe Api é um rails metal, mas nesse caso ela deve extender a classe <strong>Sinatra::Base</strong> (<strong>rails_root/app/metal/api.rb</strong>):</p>
+
+<pre class="rails"><code><span class="kw3">require</span> <span class="st0">'sinatra'</span>
+&nbsp;
+<span class="co1"># Allow the metal piece to run in isolation</span>
+<span class="kw3">require</span><span class="br0">&#40;</span><span class="kw4">File</span>.<span class="me1">dirname</span><span class="br0">&#40;</span><span class="kw2">__FILE__</span><span class="br0">&#41;</span> + <span class="st0">'/../../config/environment'</span><span class="br0">&#41;</span> <span class="kw1">unless</span> <span class="kw1">defined</span>?<span class="br0">&#40;</span>Rails<span class="br0">&#41;</span>
+&nbsp;
+<span class="kw1">class</span> Api &lt; <span class="re2">Sinatra::Base</span>
+  <span class="co1"># Code</span>
+<span class="kw1">end</span></code></pre>
+
+<p>E no arquivo <em>api_spec.rb</em> definimos o método app assim:</p>
+
+<pre class="rails"><code><span class="kw3">require</span> <span class="st0">'spec_helper'</span>
+&nbsp;
+describe <span class="st0">&quot;Api&quot;</span> <span class="kw1">do</span>
+  <span class="kw1">include</span> <span class="re2">Rack::<span class="kw4">Test</span>::Methods</span>
+&nbsp;
+  <span class="kw1">def</span> app
+    Api.<span class="kw5">new</span>
+  <span class="kw1">end</span>
+&nbsp;
+  <span class="co1"># code</span>
+<span class="kw1">end</span></code></pre>
+
+<p>No exemplo acima precisei fazer <em>require &#39;rack/test&#39;</em> no <em>spec_helper.rb</em>. Para isso, basta instalar a gem <a href="http://github.com/brynary/rack-test">rack-test</a>.</p>
+
+<p>Como você pode ver, com uma simples mudança você pode usar Sinatra com Rails e fazer seus testes com RSpec.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Após ler o <a href="http://www.mouseoverstudio.com/blog/2010/06/16/testando-sinatra-com-rspec/">post do Diego Carrion</a> sobre como usar <a href="http://sledge.boo-box.com/list/page/cnVieStyYWlscytSU3BlY18jI19jbG91ZF8jI190YWdnaW5nLXRvb2wtd3BfIyNf-64" class="bbli">RSpec<img src="http://boo-box.com/bbli" alt="[bb]" class="bbic" /></a> para testar uma aplicação <a href="http://www.sinatrarb.com/">Sinatra</a>, lembrei que tive um problema com os testes quando trouxe a aplicação feita em Sinatra para uma outra feita em <a href="http://sledge.boo-box.com/list/page/cnVieStSYWlsc18jI19jbG91ZF8jI190YWdnaW5nLXRvb2wtd3BfIyNf-56" class="bbli">Rails<img src="http://boo-box.com/bbli" alt="[bb]" class="bbic" /></a> usando <a href="http://railscasts.com/episodes/150-rails-metal">Rails Metal</a>.</p>
+
+<p>Vou usar o exemplo do Carrion para mostrar o que precisei mudar para os testes rodarem dentro do Rails Metal. Se no Sinatra usamos o <em>spec_helper.rb</em> assim:</p>
+
+<pre class="ruby"><code><span class="kw3">require</span> <span class="kw4">File</span>.<span class="me1">join</span><span class="br0">&#40;</span><span class="kw4">File</span>.<span class="me1">dirname</span><span class="br0">&#40;</span><span class="kw2">__FILE__</span><span class="br0">&#41;</span>, <span class="st0">'..'</span>, <span class="st0">'main.rb'</span><span class="br0">&#41;</span>
+&nbsp;
+<span class="kw3">require</span> <span class="st0">'spec'</span>
+<span class="kw3">require</span> <span class="st0">'rack/test'</span>
+&nbsp;
+<span class="re2">Spec::Runner</span>.<span class="me1">configure</span> <span class="kw1">do</span> |conf|
+  conf.<span class="kw1">include</span> <span class="re2">Rack::<span class="kw4">Test</span>::Methods</span>
+<span class="kw1">end</span>
+&nbsp;
+<span class="kw1">def</span> app
+  <span class="re2">Sinatra::Application</span>
+<span class="kw1">end</span></code></pre>
+
+<p>No Rails Metal precisamos usar o arquivo <em>spec_helper.rb</em> normal, da forma como ele for gerado pelo RSpec.</p>
+
+<p>A classe Api é um rails metal, mas nesse caso ela deve extender a classe <strong>Sinatra::Base</strong> (<strong>rails_root/app/metal/api.rb</strong>):</p>
+
+<pre class="rails"><code><span class="kw3">require</span> <span class="st0">'sinatra'</span>
+&nbsp;
+<span class="co1"># Allow the metal piece to run in isolation</span>
+<span class="kw3">require</span><span class="br0">&#40;</span><span class="kw4">File</span>.<span class="me1">dirname</span><span class="br0">&#40;</span><span class="kw2">__FILE__</span><span class="br0">&#41;</span> + <span class="st0">'/../../config/environment'</span><span class="br0">&#41;</span> <span class="kw1">unless</span> <span class="kw1">defined</span>?<span class="br0">&#40;</span>Rails<span class="br0">&#41;</span>
+&nbsp;
+<span class="kw1">class</span> Api &lt; <span class="re2">Sinatra::Base</span>
+  <span class="co1"># Code</span>
+<span class="kw1">end</span></code></pre>
+
+<p>E no arquivo <em>api_spec.rb</em> definimos o método app assim:</p>
+
+<pre class="rails"><code><span class="kw3">require</span> <span class="st0">'spec_helper'</span>
+&nbsp;
+describe <span class="st0">&quot;Api&quot;</span> <span class="kw1">do</span>
+  <span class="kw1">include</span> <span class="re2">Rack::<span class="kw4">Test</span>::Methods</span>
+&nbsp;
+  <span class="kw1">def</span> app
+    Api.<span class="kw5">new</span>
+  <span class="kw1">end</span>
+&nbsp;
+  <span class="co1"># code</span>
+<span class="kw1">end</span></code></pre>
+
+<p>No exemplo acima precisei fazer <em>require &#39;rack/test&#39;</em> no <em>spec_helper.rb</em>. Para isso, basta instalar a gem <a href="http://github.com/brynary/rack-test">rack-test</a>.</p>
+
+<p>Como você pode ver, com uma simples mudança você pode usar Sinatra com Rails e fazer seus testes com RSpec.</p>
+]]></content:encoded>
+				<link>http://willianfernandes.dev/testando-sinatra-com-rspec-dica-para-que-usa-rails-metal</link>
+				<guid isPermaLink="true">http://willianfernandes.dev/testando-sinatra-com-rspec-dica-para-que-usa-rails-metal</guid>
+				<pubDate>Thu, 17 Jun 2010 00:00:00 -0300</pubDate>
+			</item>
+		
+	</channel>
+</rss>
