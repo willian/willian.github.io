@@ -4,8 +4,8 @@
 		<title>Willian Fernandes</title>
 		<description>Blog do Willian Fernandes sobre desenvolvimento web</description>
 		<language>pt-BR</language>
-		<link>http://willianfernandes.dev</link>
-		<atom:link href="http://willianfernandes.dev/feed.xml" rel="self" type="application/rss+xml" />
+		<link></link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
 		
 		<pubDate>Fri, 07 Mar 2014 14:38:01 -0300</pubDate>
 		<lastBuildDate>Fri, 07 Mar 2014 14:38:01 -0300</lastBuildDate>
@@ -40,8 +40,8 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
 
 <p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/mojombo/jekyll">Jekyll&#39;s GitHub repo</a>.</p>
 ]]></content:encoded>
-				<link>http://willianfernandes.dev/welcome-to-jekyll</link>
-				<guid isPermaLink="true">http://willianfernandes.dev/welcome-to-jekyll</guid>
+				<link>/welcome-to-jekyll</link>
+				<guid isPermaLink="true">/welcome-to-jekyll</guid>
 				<pubDate>Fri, 07 Mar 2014 14:38:01 -0300</pubDate>
 			</item>
 		
@@ -187,8 +187,8 @@ Existe um terceiro parametro (nao obrigatorio) da funçao <em>$.grep</em> chamad
 
 <p><strong>OBS.:</strong> Navegadores antigos nao suportam a funçao <em>filter()</em>. Use por sua conta e risco.</p>
 ]]></content:encoded>
-				<link>http://willianfernandes.dev/como-usar-jquery-para-remover-um-item-de-um-array-js</link>
-				<guid isPermaLink="true">http://willianfernandes.dev/como-usar-jquery-para-remover-um-item-de-um-array-js</guid>
+				<link>/como-usar-jquery-para-remover-um-item-de-um-array-js</link>
+				<guid isPermaLink="true">/como-usar-jquery-para-remover-um-item-de-um-array-js</guid>
 				<pubDate>Fri, 10 Feb 2012 00:00:00 -0200</pubDate>
 			</item>
 		
@@ -220,8 +220,8 @@ Existe um terceiro parametro (nao obrigatorio) da funçao <em>$.grep</em> chamad
 <p><strong>PS: O segundo parágrafo é uma cópia descarada que o <a href="http://twitter.com/fnando">Nando</a> <a href="http://simplesideias.com.br/contrate-o-nando-vieira/">fez</a> e sem autorização prévia</strong>
 <strong>PS2: O PS1 é uma cópia descarada que o <a href="http://twitter.com/tinogomes">Tino Gomes</a> <a href="http://blog.tinogomes.com/2011/05/02/contrate-o-tino-gomes/">fez</a> e sem autorização prévia</strong></p>
 ]]></content:encoded>
-				<link>http://willianfernandes.dev/contrate-o-willian-fernandes</link>
-				<guid isPermaLink="true">http://willianfernandes.dev/contrate-o-willian-fernandes</guid>
+				<link>/contrate-o-willian-fernandes</link>
+				<guid isPermaLink="true">/contrate-o-willian-fernandes</guid>
 				<pubDate>Mon, 09 Jan 2012 00:00:00 -0200</pubDate>
 			</item>
 		
@@ -473,8 +473,8 @@ $<span class="br0">&#40;</span><span class="st0">&quot;#message_content&quot;</s
 
 <p>Fácil, não!? :)</p>
 ]]></content:encoded>
-				<link>http://willianfernandes.dev/faye-como-eu-criei-um-simples-chat-usando-rails</link>
-				<guid isPermaLink="true">http://willianfernandes.dev/faye-como-eu-criei-um-simples-chat-usando-rails</guid>
+				<link>/faye-como-eu-criei-um-simples-chat-usando-rails</link>
+				<guid isPermaLink="true">/faye-como-eu-criei-um-simples-chat-usando-rails</guid>
 				<pubDate>Tue, 08 Nov 2011 00:00:00 -0200</pubDate>
 			</item>
 		
@@ -568,8 +568,8 @@ config.<span class="me1">assets</span>.<span class="me1">enabled</span> = <span 
 
 <p>Fica então a dica.</p>
 ]]></content:encoded>
-				<link>http://willianfernandes.dev/desabilitando-asset-pipeline-no-rails-3-1</link>
-				<guid isPermaLink="true">http://willianfernandes.dev/desabilitando-asset-pipeline-no-rails-3-1</guid>
+				<link>/desabilitando-asset-pipeline-no-rails-3-1</link>
+				<guid isPermaLink="true">/desabilitando-asset-pipeline-no-rails-3-1</guid>
 				<pubDate>Sat, 22 Oct 2011 00:00:00 -0200</pubDate>
 			</item>
 		
@@ -605,8 +605,8 @@ curl: (3) malformed</code></p>
 
 <h1>fikdik</h1>
 ]]></content:encoded>
-				<link>http://willianfernandes.dev/dica-rapida-rvm-1-8-1</link>
-				<guid isPermaLink="true">http://willianfernandes.dev/dica-rapida-rvm-1-8-1</guid>
+				<link>/dica-rapida-rvm-1-8-1</link>
+				<guid isPermaLink="true">/dica-rapida-rvm-1-8-1</guid>
 				<pubDate>Tue, 06 Sep 2011 00:00:00 -0300</pubDate>
 			</item>
 		
@@ -632,8 +632,8 @@ curl: (3) malformed</code></p>
 
 <p>Até lá!</p>
 ]]></content:encoded>
-				<link>http://willianfernandes.dev/railsconf-2011</link>
-				<guid isPermaLink="true">http://willianfernandes.dev/railsconf-2011</guid>
+				<link>/railsconf-2011</link>
+				<guid isPermaLink="true">/railsconf-2011</guid>
 				<pubDate>Wed, 04 May 2011 00:00:00 -0300</pubDate>
 			</item>
 		
@@ -659,8 +659,8 @@ Aproveitei para me aventurar um pouco no HTML 5 e CSS3 e provavelmente algumas c
 
 <p>Até!</p>
 ]]></content:encoded>
-				<link>http://willianfernandes.dev/novo-layout-2011</link>
-				<guid isPermaLink="true">http://willianfernandes.dev/novo-layout-2011</guid>
+				<link>/novo-layout-2011</link>
+				<guid isPermaLink="true">/novo-layout-2011</guid>
 				<pubDate>Mon, 31 Jan 2011 00:00:00 -0200</pubDate>
 			</item>
 		
@@ -768,8 +768,8 @@ Em casa uso meu bom e velho (ok, nem tão bom assim) MacBook preto, também com 
 
 <p>Então agora convido @<a href="http://twitter.com/tinogomes">tinogomes</a> e @<a href="http://twitter.com/lucashungaro">lucashungaro</a> para contarem do seus ambientes.</p>
 ]]></content:encoded>
-				<link>http://willianfernandes.dev/meu-ambiente-de-desenvolvimento</link>
-				<guid isPermaLink="true">http://willianfernandes.dev/meu-ambiente-de-desenvolvimento</guid>
+				<link>/meu-ambiente-de-desenvolvimento</link>
+				<guid isPermaLink="true">/meu-ambiente-de-desenvolvimento</guid>
 				<pubDate>Mon, 31 Jan 2011 00:00:00 -0200</pubDate>
 			</item>
 		
@@ -871,8 +871,8 @@ describe <span class="st0">&quot;Api&quot;</span> <span class="kw1">do</span>
 
 <p>Como você pode ver, com uma simples mudança você pode usar Sinatra com Rails e fazer seus testes com RSpec.</p>
 ]]></content:encoded>
-				<link>http://willianfernandes.dev/testando-sinatra-com-rspec-dica-para-que-usa-rails-metal</link>
-				<guid isPermaLink="true">http://willianfernandes.dev/testando-sinatra-com-rspec-dica-para-que-usa-rails-metal</guid>
+				<link>/testando-sinatra-com-rspec-dica-para-que-usa-rails-metal</link>
+				<guid isPermaLink="true">/testando-sinatra-com-rspec-dica-para-que-usa-rails-metal</guid>
 				<pubDate>Thu, 17 Jun 2010 00:00:00 -0300</pubDate>
 			</item>
 		
