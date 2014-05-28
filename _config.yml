@@ -5,7 +5,8 @@ pygments: true
 encoding: UTF-8
 timezone: America/Sao_Paulo
 permalink: /:title
-url: http://willianfernandes.dev
+url: http://willian.github.io
+baseurl: ""
 assets:
   js_compressor:  uglifier
   css_compressor: sass
